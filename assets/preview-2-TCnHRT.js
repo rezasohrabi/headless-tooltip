@@ -1,0 +1,1 @@
+import{_ as o}from"./index-BwyXWai5.js";import"./index-BwK5LeP0.js";import"./_commonjsHelpers-CqkleIqs.js";const s={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},versions:{current:"v0",previous:[{name:"v0",url:"https://rezasohrabi.github.io/headless-tooltip"}]},docs:{theme:o.light}}};export{s as default};

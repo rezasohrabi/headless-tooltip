@@ -1,4 +1,4 @@
-import{j as e,M as s,C as r}from"./index-ui1J0Luw.js";import{useMDXComponents as i}from"./index-Bo7cNXl6.js";import{T as l}from"./index.stories-Ckb-f2bV.js";import"./iframe-Bxkfrylt.js";import"./index-BwK5LeP0.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-B9ng7-bL.js";import"./index-COkI8TRB.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function t(o){const n={a:"a",blockquote:"blockquote",code:"code",h1:"h1",h2:"h2",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...i(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(s,{of:l}),`
+import{j as e,M as s,C as r}from"./index-FIo8MTyE.js";import{useMDXComponents as i}from"./index-Bo7cNXl6.js";import{T as l}from"./index.stories-Ckb-f2bV.js";import"./iframe-Cx5S4VKh.js";import"./index-BwK5LeP0.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-BwyXWai5.js";import"./index-B9ng7-bL.js";import"./index-COkI8TRB.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function t(o){const n={a:"a",blockquote:"blockquote",code:"code",h1:"h1",h2:"h2",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...i(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(s,{of:l}),`
 `,e.jsx(n.h1,{id:"definition",children:"Definition"}),`
 `,e.jsx(n.p,{children:"Tooltip is a floating interactive element that appears when hovering over or focusing on content."}),`
 `,e.jsx(n.p,{children:"You can place text, HTML elements, and interactive components inside of a tooltip."}),`
@@ -33,4 +33,4 @@ function Example() {\r
 `]}),`
 `,e.jsx(n.h2,{id:"props",children:"Props"}),`
 `,e.jsx(n.p,{children:"Tooltip has the following properties:"}),`
-`,e.jsx(r,{})]})}function g(o={}){const{wrapper:n}={...i(),...o.components};return n?e.jsx(n,{...o,children:e.jsx(t,{...o})}):t(o)}export{g as default};
+`,e.jsx(r,{})]})}function w(o={}){const{wrapper:n}={...i(),...o.components};return n?e.jsx(n,{...o,children:e.jsx(t,{...o})}):t(o)}export{w as default};
