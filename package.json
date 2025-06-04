@@ -5,6 +5,7 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "type": "module",
+  "sideEffects": false,
   "files": [
     "dist"
   ],
