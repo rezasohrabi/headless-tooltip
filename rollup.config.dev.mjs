@@ -6,9 +6,10 @@ import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
 import serve from 'rollup-plugin-serve';
 import replace from '@rollup/plugin-replace';
-
-import pkg from './package.json' assert { type: 'json' };
+import fs from 'fs';
 import livereload from 'rollup-plugin-livereload';
+
+const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
 const isDev = process.env.NODE_ENV === 'development';
 

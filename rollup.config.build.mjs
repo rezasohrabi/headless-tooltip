@@ -7,8 +7,9 @@ import postcss from 'rollup-plugin-postcss';
 import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
 import analyze from 'rollup-plugin-analyzer';
+import fs from 'fs';
 
-import pkg from './package.json' assert { type: 'json' };
+const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
 export default [
   {
@@ -31,7 +32,9 @@ export default [
       }),
       postcss(),
       terser(),
-      json(),
+      json({
+        compact: true,
+      }),
       analyze(),
     ],
     external: ['react', 'react-dom'],
