@@ -32,7 +32,9 @@ export default [
       }),
       postcss(),
       terser(),
-      json(),
+      json({
+        compact: true,
+      }),
       analyze(),
     ],
     external: ['react', 'react-dom'],
