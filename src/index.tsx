@@ -10,21 +10,7 @@ import React, {
   useState,
 } from 'react';
 
-import ReactUniPopper from 'react-uni-popper';
-
-export type PositionType =
-  | 'top'
-  | 'right'
-  | 'bottom'
-  | 'left'
-  | 'top-start'
-  | 'top-end'
-  | 'right-start'
-  | 'right-end'
-  | 'bottom-start'
-  | 'bottom-end'
-  | 'left-start'
-  | 'left-end';
+import ReactUniPopper, { PositionType } from 'react-uni-popper';
 
 type TimeoutRef = ReturnType<typeof setTimeout> | null;
 
