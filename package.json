@@ -107,6 +107,6 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^2.1.2"
+    "react-uni-popper": "^1.0.1"
   }
 }
