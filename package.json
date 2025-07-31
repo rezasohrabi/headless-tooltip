@@ -107,6 +107,6 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
-    "react-uni-popper": "^1.0.1"
+    "react-uni-popper": "^1.0.2"
   }
 }
