@@ -322,21 +322,21 @@ function Tooltip({
         }
       },
       'aria-describedby': isOpenState ? tooltipId : undefined,
-      onMouseOver: () => {
+      onMouseOver: (e: React.MouseEvent) => {
         handleOpen(true);
-        childrenElement?.props.onMouseOver?.();
+        childrenElement?.props.onMouseOver?.(e);
       },
-      onMouseLeave: () => {
+      onMouseLeave: (e: React.MouseEvent) => {
         handleClose(true);
-        childrenElement?.props.onMouseLeave?.();
+        childrenElement?.props.onMouseLeave?.(e);
       },
-      onFocus: () => {
+      onFocus: (e: React.FocusEvent) => {
         handleOpen(false);
-        childrenElement?.props.onFocus?.();
+        childrenElement?.props.onFocus?.(e);
       },
-      onBlur: () => {
+      onBlur: (e: React.FocusEvent) => {
         handleClose(false);
-        childrenElement?.props.onBlur?.();
+        childrenElement?.props.onBlur?.(e);
       },
       tabIndex: childrenElement?.props.tabIndex || 0,
     }),
