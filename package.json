@@ -15,6 +15,7 @@
     "dev": "rimraf dist && cross-env NODE_ENV=development rollup -c rollup.config.dev.mjs -w",
     "test": "vitest run --config vitest.config.ts",
     "test:watch": "vitest --config vitest.config.ts --watch",
+    "test:ui": "vitest --ui",
     "lint": "eslint --ext .ts,.tsx src",
     "lint:fix": "eslint --ext .ts,.tsx src --fix",
     "format": "prettier --write .",
@@ -73,6 +74,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.0.12",
+    "@vitest/ui": "^3.2.4",
     "cross-env": "^7.0.3",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
@@ -107,6 +109,8 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
-    "react-uni-popper": "^1.0.2"
+    "react-transition-group": "^4.4.5",
+    "react-uni-popper": "^1.0.2",
+    "transition-hook": "^1.5.2"
   }
 }
