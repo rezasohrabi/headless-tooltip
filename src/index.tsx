@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 
 import ReactUniPopper, { PositionType } from 'react-uni-popper';
+import useTransition from './useTransition';
 
 type TimeoutRef = ReturnType<typeof setTimeout> | null;
 
@@ -87,6 +88,11 @@ export interface TooltipProps
   arrow?: boolean;
   arrowSize?: number;
   arrowClassName?: string;
+  transition?: {
+    enable?: boolean;
+    enterDuration?: number;
+    exitDuration?: number;
+  };
 }
 
 /**
@@ -135,6 +141,7 @@ function Tooltip({
   arrow = false,
   arrowSize = 12,
   arrowClassName,
+  transition: { enable = false, enterDuration = 300, exitDuration = 300 } = {},
   ...props
 }: TooltipProps): ReactElement {
   const [tooltipId] = useState(getId());
@@ -197,7 +204,28 @@ function Tooltip({
   }, [children, isForwardRefComponent]);
 
   const isControlled = open !== undefined;
-  const isOpenState = isControlled ? open : isOpen;
+  const controlledState = isControlled ? open : isOpen;
+
+  const phase = useTransition({
+    in: controlledState,
+    enterDuration: enterDuration,
+    exitDuration: exitDuration,
+    skip: !enable,
+  });
+
+  const isOpenState = enable ? phase !== 'exited' : controlledState;
+
+  console.log('phase', phase, enable, enterDuration, exitDuration);
+
+  /**
+   * Generates data attributes for CSS transitions based on the current phase
+   */
+  const getTransitionDataAttributes = useCallback(() => {
+    if (!enable) return {};
+
+    const dataKey = `data-${phase}`;
+    return { [dataKey]: '' };
+  }, [enable, phase]);
 
   /**
    * Closes the tooltip by updating its state and triggering the `onOpenChange` callback.
@@ -371,7 +399,11 @@ function Tooltip({
           }
         >
           {({ arrowRef, arrowStyles }) => (
-            <div className={`headless-tooltip ${className}`} {...props}>
+            <div
+              {...getTransitionDataAttributes()}
+              className={`headless-tooltip ${className}`}
+              {...props}
+            >
               {arrow && (
                 <div
                   ref={arrowRef}
