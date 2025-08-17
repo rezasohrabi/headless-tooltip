@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Tooltip from './index';
+import { Tooltip } from './index';
 
 function JungleAvocadoDemo({
   isPlaying,

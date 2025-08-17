@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import Tooltip from './index';
+import { Tooltip } from './index';
 import ShowCases from './ShowCases';
 import Animations from './Animations';
 import Basic from './Basic';
