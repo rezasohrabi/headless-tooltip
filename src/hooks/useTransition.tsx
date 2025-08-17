@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 export type Phase =
   | 'enter'
@@ -98,11 +98,9 @@ export function useTransition({
   exitDuration = 0,
   skip = false,
 }: UseTransitionProps) {
-  const [phase, setPhase] = React.useState<Phase>(
-    isEnter ? 'entered' : 'exited',
-  );
+  const [phase, setPhase] = useState<Phase>(isEnter ? 'entered' : 'exited');
 
-  React.useEffect(() => {
+  useEffect(() => {
     let timer;
 
     if (skip) {
@@ -144,5 +142,3 @@ export function useTransition({
 
   return phase;
 }
-
-export default useTransition;

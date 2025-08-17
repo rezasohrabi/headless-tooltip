@@ -31,5 +31,3 @@ export function useOnEscape(callback: () => void, isOpen: boolean) {
     };
   }, [callback, isOpen]);
 }
-
-export default useOnEscape;
