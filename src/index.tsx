@@ -11,7 +11,7 @@ import React, {
 } from 'react';
 
 import ReactUniPopper, { PositionType } from 'react-uni-popper';
-import useTransition from './useTransition';
+import useTransition from './hooks/useTransition';
 import useOnEscape from './hooks/useOnEscape';
 
 type TimeoutRef = ReturnType<typeof setTimeout> | null;
