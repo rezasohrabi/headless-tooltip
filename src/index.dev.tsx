@@ -2,39 +2,1199 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import Tooltip from './index';
+import ShowCases from './ShowCases';
+import Animations from './Animations';
+import Basic from './Basic';
+import Demo from './Demo';
 
-// Add some basic styles for demo purposes
+// Amazing Jungle Theme Styles with Avocado Animations
 const demoStyles = `
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 30%, #166534 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 .tooltip-demo {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 30%, #166534 100%);
+  color: white;
+}
+
+/* Jungle Hero Section */
+.jungle-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.jungle-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(21, 128, 61, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(22, 101, 52, 0.2) 0%, transparent 50%);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, #f0fdf4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: titleGlow 3s ease-in-out infinite;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  color: #f0fdf4;
+  z-index: 2;
+  position: relative;
+}
+
+/* Avocado Demo Area */
+.avocado-demo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.avocado {
+  position: absolute;
+  font-size: 3rem;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: avocadoBounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  z-index: 5;
+}
+
+.avocado:hover {
+  transform: scale(1.3) rotate(15deg);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+}
+
+.avocado-active {
+  animation: avocadoPulse 1s ease-in-out infinite, avocadoBounce 2s ease-in-out infinite;
+  transform: scale(1.4);
+  z-index: 10;
+  filter: drop-shadow(0 8px 20px rgba(34, 197, 94, 0.8));
+}
+
+/* Jungle Background Elements */
+.jungle-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jungle-leaf {
+  position: absolute;
+  font-size: 2rem;
+  animation: leafSway 4s ease-in-out infinite;
+}
+
+.jungle-flower {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: flowerBloom 3s ease-in-out infinite;
+}
+
+.jungle-vine {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: vineGrow 3s ease-in-out infinite;
+}
+
+.jungle-butterfly {
+  position: absolute;
+  font-size: 2rem;
+  animation: butterflyFly 12s linear infinite;
+}
+
+/* Amazing Tooltip Styles */
+.jungle-tooltip {
+
+  animation: tooltipMegaZoom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center bottom;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.tooltip-content {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border: 2px solid #15803d;
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 
+    0 15px 35px rgba(34, 197, 94, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+
+  position: relative;
+  with: 100%;
+  border-radius: 16px;
+}
+
+.tooltip-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: tooltipShimmer 2s ease-in-out infinite;
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.tooltip-icon {
+  font-size: 1.2rem;
+  animation: iconSpin 4s linear infinite;
+}
+
+.tooltip-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-body {
+  padding: 8px 16px 12px 16px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  line-height: 1.4;
+}
+
+.jungle-arrow {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border: 1px solid #106b32;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+/* Controls */
+.demo-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.control-button {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  transition: all 0.3s ease;
+}
+
+.control-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+.demo-counter {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+/* Test Section */
+.test-section {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: center;
 }
 
 .demo-button {
-  background: #3b82f6;
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
   margin: 10px;
   font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .demo-button:hover {
-  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 .demo-tooltip {
-  background: rgba(0, 0, 0, 0.9);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border: 2px solid #15803d;
+  border-radius: 12px;
+  padding: 12px 16px;
   color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
+  font-weight: 600;
   font-size: 14px;
-  max-width: 200px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 10px 25px rgba(34, 197, 94, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: tooltipZoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Animations */
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes avocadoBounce {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes avocadoPulse {
+  0%, 100% {
+    transform: scale(1.4);
+    filter: drop-shadow(0 8px 20px rgba(34, 197, 94, 0.6));
+  }
+  50% {
+    transform: scale(1.7);
+    filter: drop-shadow(0 12px 30px rgba(34, 197, 94, 0.9));
+  }
+}
+
+@keyframes leafSway {
+  0%, 100% {
+    transform: rotate(-8deg) translateX(0px);
+  }
+  50% {
+    transform: rotate(8deg) translateX(15px);
+  }
+}
+
+@keyframes flowerBloom {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.4) rotate(20deg);
+  }
+}
+
+@keyframes vineGrow {
+  0%, 100% {
+    transform: scale(1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(5deg);
+  }
+}
+
+@keyframes butterflyFly {
+  0% {
+    transform: translateX(-50px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(100px) translateY(-30px) rotate(15deg);
+  }
+  50% {
+    transform: translateX(200px) translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateX(100px) translateY(30px) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(-50px) translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes tooltipMegaZoom {
+  0% {
+    transform: scale(0.2) rotate(-15deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes tooltipZoomIn {
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes tooltipShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Specific Tooltip Animations */
+
+/* 1. Bounce In Animation */
+.tooltip-bounce-in {
+  animation: bounceInAnimation 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+
+@keyframes bounceInAnimation {
+  0% {
+    transform: scale(0.3) translateY(20px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) translateY(-10px);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.9) translateY(5px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* 2. Slide From Left Animation */
+.tooltip-slide-from-left {
+  animation: slideFromLeftAnimation 0.5s ease-out !important;
+}
+
+@keyframes slideFromLeftAnimation {
+  0% {
+    transform: translateX(-100px) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(10px) rotate(2deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* 3. Mega Zoom Animation */
+.tooltip-mega-zoom {
+  animation: megaZoomAnimation 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+@keyframes megaZoomAnimation {
+  0% {
+    transform: scale(0.1) rotate(-20deg);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  30% {
+    transform: scale(1.5) rotate(5deg);
+    opacity: 0.7;
+    filter: blur(2px);
+  }
+  60% {
+    transform: scale(0.8) rotate(-2deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* 4. Flip 3D Animation */
+.tooltip-flip-3d {
+  animation: flip3DAnimation 0.7s ease-in-out !important;
+  transform-style: preserve-3d;
+}
+
+@keyframes flip3DAnimation {
+  0% {
+    transform: rotateY(-90deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(0deg) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 5. Elastic Bounce Animation */
+.tooltip-elastic-bounce {
+  animation: elasticBounceAnimation 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+
+@keyframes elasticBounceAnimation {
+  0% {
+    transform: scale(0.2) translateY(30px);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.3) translateY(-15px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.7) translateY(8px);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.1) translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* 6. Rotate Swing Animation */
+.tooltip-rotate-swing {
+  animation: rotateSwingAnimation 0.6s ease-in-out !important;
+  transform-origin: top center;
+}
+
+@keyframes rotateSwingAnimation {
+  0% {
+    transform: rotate(-15deg) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    transform: rotate(10deg) scale(1.1);
+    opacity: 0.4;
+  }
+  40% {
+    transform: rotate(-5deg) scale(0.95);
+    opacity: 0.7;
+  }
+  60% {
+    transform: rotate(3deg) scale(1.05);
+    opacity: 0.9;
+  }
+  80% {
+    transform: rotate(-1deg) scale(0.98);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 7. Fade Fly In Animation */
+.tooltip-fade-fly-in {
+  animation: fadeFlyInAnimation 0.7s ease-out !important;
+}
+
+@keyframes fadeFlyInAnimation {
+  0% {
+    transform: translateY(-30px) translateX(-20px) scale(0.5);
+    opacity: 0;
+    filter: blur(3px);
+  }
+  30% {
+    transform: translateY(-10px) translateX(-5px) scale(0.8);
+    opacity: 0.3;
+    filter: blur(1px);
+  }
+  60% {
+    transform: translateY(5px) translateX(2px) scale(1.1);
+    opacity: 0.8;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Enhanced Tooltip Effects for Each Animation */
+.tooltip-bounce-in::before {
+  animation: shimmerBounce 3s ease-in-out infinite;
+}
+
+.tooltip-slide-from-left::before {
+  animation: shimmerSlide 2.5s ease-in-out infinite;
+}
+
+.tooltip-mega-zoom::before {
+  animation: shimmerPulse 2s ease-in-out infinite;
+}
+
+.tooltip-flip-3d::before {
+  animation: shimmerFlip 3.5s ease-in-out infinite;
+}
+
+.tooltip-elastic-bounce::before {
+  animation: shimmerElastic 2.8s ease-in-out infinite;
+}
+
+.tooltip-rotate-swing::before {
+  animation: shimmerSwing 3.2s ease-in-out infinite;
+}
+
+.tooltip-fade-fly-in::before {
+  animation: shimmerFade 2.7s ease-in-out infinite;
+}
+
+/* Transition Phase Animations */
+.headless-tooltip[data-phase="enter"] {
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+}
+
+.headless-tooltip[data-phase="entering"] {
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+}
+
+.headless-tooltip[data-phase="entered"] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.headless-tooltip[data-phase="exit"] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.headless-tooltip[data-phase="exiting"] {
+  opacity: 0;
+  transform: scale(0.8) translateY(-10px);
+}
+
+.headless-tooltip[data-phase="exited"] {
+  opacity: 0;
+  transform: scale(0.8) translateY(-10px);
+}
+
+/* Smooth transitions for all phases */
+.headless-tooltip {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects for tooltips */
+.jungle-tooltip:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 20px 40px rgba(34, 197, 94, 0.6));
+}
+
+.jungle-tooltip:hover .tooltip-content::before {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+/* Micro-interactions for tooltip content */
+.tooltip-content:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+
+.tooltip-header:hover .tooltip-icon {
+  animation: iconPulse 0.6s ease-in-out;
+}
+
+.tooltip-body:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  transition: background 0.3s ease;
+}
+
+/* Icon pulse animation */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Enhanced Tooltip Entrance Animations */
+.jungle-tooltip[data-phase="entering"] {
+  animation: tooltipEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.jungle-tooltip[data-phase="exiting"] {
+  animation: tooltipExit 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes tooltipEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px) rotate(-5deg);
+    filter: blur(3px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1) translateY(-5px) rotate(2deg);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes tooltipExit {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-20px) rotate(5deg);
+    filter: blur(3px);
+  }
+}
+
+/* Special entrance effects for each animation type */
+.tooltip-bounce-in[data-phase="entering"] {
+  animation: bounceInEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.tooltip-slide-from-left[data-phase="entering"] {
+  animation: slideLeftEntrance 0.6s ease-out forwards;
+}
+
+.tooltip-mega-zoom[data-phase="entering"] {
+  animation: megaZoomEntrance 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.tooltip-flip-3d[data-phase="entering"] {
+  animation: flip3DEntrance 0.8s ease-in-out forwards;
+}
+
+.tooltip-elastic-bounce[data-phase="entering"] {
+  animation: elasticBounceEntrance 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.tooltip-rotate-swing[data-phase="entering"] {
+  animation: rotateSwingEntrance 0.7s ease-in-out forwards;
+}
+
+.tooltip-fade-fly-in[data-phase="entering"] {
+  animation: fadeFlyEntrance 0.8s ease-out forwards;
+}
+
+/* Special exit effects for each animation type */
+.tooltip-bounce-in[data-phase="exiting"] {
+  animation: bounceOutExit 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.tooltip-slide-from-left[data-phase="exiting"] {
+  animation: slideRightExit 0.4s ease-in forwards;
+}
+
+.tooltip-mega-zoom[data-phase="exiting"] {
+  animation: megaZoomExit 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.tooltip-flip-3d[data-phase="exiting"] {
+  animation: flip3DExit 0.5s ease-in-out forwards;
+}
+
+.tooltip-elastic-bounce[data-phase="exiting"] {
+  animation: elasticBounceExit 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.tooltip-rotate-swing[data-phase="exiting"] {
+  animation: rotateSwingExit 0.5s ease-in-out forwards;
+}
+
+.tooltip-fade-fly-in[data-phase="exiting"] {
+  animation: fadeFlyExit 0.6s ease-in forwards;
+}
+
+/* Enhanced entrance keyframes */
+@keyframes bounceInEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) translateY(30px);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(1.3) translateY(-15px);
+  }
+  70% {
+    opacity: 0.9;
+    transform: scale(0.8) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideLeftEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px) rotate(-8deg);
+  }
+  70% {
+    opacity: 0.8;
+    transform: translateX(8px) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes megaZoomEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(-15deg);
+    filter: blur(4px);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(1.4) rotate(3deg);
+    filter: blur(1px);
+  }
+  80% {
+    opacity: 0.95;
+    transform: scale(0.9) rotate(-1deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes flip3DEntrance {
+  0% {
+    opacity: 0;
+    transform: rotateY(-75deg) scale(0.7);
+  }
+  60% {
+    opacity: 0.8;
+    transform: rotateY(0deg) scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+@keyframes elasticBounceEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) translateY(40px);
+  }
+  30% {
+    opacity: 0.5;
+    transform: scale(1.4) translateY(-20px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.6) translateY(12px);
+  }
+  70% {
+    opacity: 0.95;
+    transform: scale(1.2) translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes rotateSwingEntrance {
+  0% {
+    opacity: 0;
+    transform: rotate(-20deg) scale(0.7);
+  }
+  30% {
+    opacity: 0.4;
+    transform: rotate(12deg) scale(1.2);
+  }
+  60% {
+    opacity: 0.8;
+    transform: rotate(-6deg) scale(0.9);
+  }
+  85% {
+    opacity: 0.95;
+    transform: rotate(2deg) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes fadeFlyEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px) translateX(-15px) scale(0.6);
+    filter: blur(3px);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateY(-8px) translateX(-5px) scale(0.85);
+    filter: blur(1px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateY(3px) translateX(2px) scale(1.08);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Enhanced exit keyframes */
+@keyframes bounceOutExit {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) translateY(-30px);
+  }
+}
+
+@keyframes slideRightExit {
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(80px) rotate(8deg);
+  }
+}
+
+@keyframes megaZoomExit {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) rotate(15deg);
+    filter: blur(4px);
+  }
+}
+
+@keyframes flip3DExit {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(75deg) scale(0.7);
+  }
+}
+
+@keyframes elasticBounceExit {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) translateY(40px);
+  }
+}
+
+@keyframes rotateSwingExit {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(20deg) scale(0.7);
+  }
+}
+
+@keyframes fadeFlyExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-25px) translateX(15px) scale(0.6);
+    filter: blur(3px);
+  }
+}
+
+@keyframes shimmerBounce {
+  0%, 100% { left: -100%; }
+  50% { left: 100%; }
+}
+
+@keyframes shimmerSlide {
+  0%, 100% { left: -100%; }
+  60% { left: 100%; }
+}
+
+@keyframes shimmerPulse {
+  0%, 100% { left: -100%; opacity: 0.2; }
+  50% { left: 100%; opacity: 0.4; }
+}
+
+@keyframes shimmerFlip {
+  0%, 100% { left: -100%; }
+  40% { left: 100%; }
+}
+
+@keyframes shimmerElastic {
+  0%, 100% { left: -100%; }
+  45% { left: 100%; }
+}
+
+@keyframes shimmerSwing {
+  0%, 100% { left: -100%; }
+  55% { left: 100%; }
+}
+
+@keyframes shimmerFade {
+  0%, 100% { left: -100%; }
+  65% { left: 100%; }
+}
+
+/* Closing Animations */
+.tooltip-closing {
+  animation-duration: 0.3s !important;
+  animation-fill-mode: forwards !important;
+}
+
+.tooltip-bounce-in.tooltip-closing {
+  animation-name: bounceOutAnimation !important;
+}
+
+.tooltip-slide-from-left.tooltip-closing {
+  animation-name: slideOutToRightAnimation !important;
+}
+
+.tooltip-mega-zoom.tooltip-closing {
+  animation-name: megaZoomOutAnimation !important;
+}
+
+.tooltip-flip-3d.tooltip-closing {
+  animation-name: flip3DOutAnimation !important;
+}
+
+.tooltip-elastic-bounce.tooltip-closing {
+  animation-name: elasticBounceOutAnimation !important;
+}
+
+.tooltip-rotate-swing.tooltip-closing {
+  animation-name: rotateSwingOutAnimation !important;
+}
+
+.tooltip-fade-fly-in.tooltip-closing {
+  animation-name: fadeFlyOutAnimation !important;
+}
+
+/* Closing Keyframes */
+@keyframes bounceOutAnimation {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.3) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutToRightAnimation {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes megaZoomOutAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(0.1) rotate(20deg);
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+@keyframes flip3DOutAnimation {
+  0% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes elasticBounceOutAnimation {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2) translateY(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateSwingOutAnimation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(15deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFlyOutAnimation {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateY(-30px) translateX(20px) scale(0.5);
+    opacity: 0;
+    filter: blur(3px);
+  }
 }
 
 .demo-content {
@@ -53,7 +1213,6 @@ const demoStyles = `
 .scroll-content {
   height: 400px;
   padding: 20px;
-  background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
 }
 
 .nested-scroll-demo {
@@ -82,15 +1241,8 @@ const demoStyles = `
 `;
 
 export default {};
-const longContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu tempus velit, nec finibus libero. Vivamus sed ullamcorper nunc, porta placerat mi. Curabitur eu ligula nec diam commodo commodo. Pellentesque euismod libero nisi, ac consectetur lacus suscipit a. Pellentesque condimentum, dolor nec rutrum placerat, neque dolor euismod erat, in vehicula urna elit eu orci. Mauris consequat erat eu lacus luctus vulputate. Duis ac lectus mauris. Mauris sagittis dictum justo, facilisis porttitor nulla scelerisque fringilla.
 
-Donec et semper elit, rhoncus faucibus dui. Suspendisse sit amet rhoncus magna. Aenean tempus libero turpis, vel blandit diam lacinia in. Mauris euismod efficitur tellus et laoreet. Mauris tincidunt lacus a purus maximus luctus eget posuere risus. Curabitur molestie lorem ex, vel luctus tortor porta eget. Sed purus elit, mattis eu nunc a, dictum pretium ipsum. Duis sed finibus nulla, non consectetur magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque efficitur, ipsum nec vulputate mattis, risus augue feugiat quam, nec venenatis lorem est in nulla. Vestibulum sagittis at erat non placerat.
-
-Maecenas in augue quis enim bibendum facilisis. Donec sed libero quis tellus laoreet aliquet. Sed gravida mi ac nibh tincidunt efficitur. Ut volutpat ante nec sem imperdiet, pretium sagittis arcu laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer semper gravida lectus. Sed luctus venenatis ornare.
-
-Nulla ligula diam, rutrum quis ornare sit amet, tincidunt ut dui. Praesent tempor dapibus erat, sit amet commodo mi dapibus eu. Fusce eros nibh, rutrum a sem et, feugiat consequat lectus. Maecenas sollicitudin ex arcu, vestibulum sodales ante eleifend sollicitudin. Donec id nibh mauris. Duis vestibulum ligula eu leo tempus semper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget metus orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ante erat, feugiat id sem ac, varius interdum justo. Proin et metus ac risus consectetur ornare. Vivamus quis arcu accumsan, dignissim dolor eget, lobortis risus. Aliquam imperdiet, eros non bibendum suscipit, eros leo feugiat odio, vitae cursus diam risus quis risus.
-
-Fusce vel egestas dolor. Nullam placerat placerat augue ut eleifend. Aliquam porttitor sem elementum dolor luctus molestie. Vestibulum scelerisque ultricies venenatis. Duis consectetur, ante quis dignissim iaculis, tellus ipsum gravida est, ac tempor sem nunc ut tellus. Vestibulum erat magna, imperdiet non aliquet sed, placerat sit amet risus. Duis eget est ex. In sit amet ultrices turpis, ut luctus justo. Nullam et mauris eu ligula dapibus fermentum. Pellentesque vel nunc viverra, semper velit faucibus, tincidunt sem.`;
+// Jungle Avocado Demo Component
 
 export function Test() {
   // Inject styles
@@ -106,58 +1258,21 @@ export function Test() {
 
   return (
     <div className="tooltip-demo">
-      <h1>Enhanced Tooltip with Scroll & Collision Management</h1>
+      <Demo />
 
-      <div
-        style={{
-          margin: '20px 0',
-          padding: '20px',
-          border: '3px solid #ff6b6b',
-          borderRadius: '8px',
-          backgroundColor: '#fff5f5',
-        }}
-      >
-        <h2 style={{ color: '#c53030', margin: '0 0 10px 0' }}>
-          🚨 BASIC FUNCTIONALITY TEST
-        </h2>
-        <Tooltip
-          content="Hello! I'm a basic tooltip."
-          placement="top"
-          className="demo-tooltip"
-        >
-          <button
-            style={{
-              padding: '12px 24px',
-              fontSize: '16px',
-              backgroundColor: '#ff6b6b',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-            }}
-          >
-            HOVER ME - Basic Test
-          </button>
-        </Tooltip>
+      <Basic />
+
+      <div className="test-section">
+        <h2 className="section-title">🎯 Collision Detection Test</h2>
         <p
           style={{
-            fontSize: '14px',
-            color: '#666',
-            marginTop: '10px',
-            marginBottom: '0',
+            color: '#f0fdf4',
+            textAlign: 'center',
+            marginBottom: '2rem',
           }}
         >
-          If this tooltip shows on hover, basic functionality is working. If
-          not, there&apos;s a fundamental issue.
-        </p>
-      </div>
-
-      <div className="demo-content">
-        <h2>Collision Detection Test</h2>
-        <p>
           Try tooltips near viewport edges - they&apos;ll automatically flip to
-          stay visible!
+          stay visible! 🌿
         </p>
 
         <div
@@ -168,203 +1283,228 @@ export function Test() {
           }}
         >
           <Tooltip
-            content="I flip when near edges!"
+            className="jungle-tooltip"
+            transition={{
+              enable: true,
+              enterDuration: 400,
+              exitDuration: 250,
+            }}
+            content={
+              <div className="tooltip-content">
+                <div className="tooltip-header">
+                  <span className="tooltip-icon">🔄</span>
+                  <span className="tooltip-title">Smart Flip</span>
+                </div>
+                <div className="tooltip-body">
+                  🌿 I flip when near edges to stay in the jungle!
+                </div>
+              </div>
+            }
             placement="top"
-            className="demo-tooltip"
+            arrow
+            zIndex={2000}
+            arrowClassName="jungle-arrow"
           >
-            <button className="demo-button">Top Left Corner</button>
+            <button className="demo-button">🥑 Top Left Corner</button>
           </Tooltip>
 
           <Tooltip
-            content="Smart positioning at work!"
+            className="jungle-tooltip"
+            transition={{
+              enable: true,
+              enterDuration: 400,
+              exitDuration: 250,
+            }}
+            content={
+              <div className="tooltip-content">
+                <div className="tooltip-header">
+                  <span className="tooltip-icon">🎯</span>
+                  <span className="tooltip-title">Smart Position</span>
+                </div>
+                <div className="tooltip-body">
+                  ✨ Smart jungle positioning at work!
+                </div>
+              </div>
+            }
             placement="top"
-            className="demo-tooltip"
+            arrow
+            zIndex={2000}
+            arrowClassName="jungle-arrow"
           >
-            <button className="demo-button">Top Right Corner</button>
+            <button className="demo-button">🌴 Top Right Corner</button>
           </Tooltip>
         </div>
+      </div>
 
-        <h2>Scroll Management Test</h2>
-        <p>Scroll this container - the tooltip follows the element:</p>
-
-        <div className="scroll-container">
-          <div className="scroll-content">
-            <p>Scroll this container up and down...</p>
-
-            <Tooltip
-              content="I move with scroll! Position updates automatically on scroll."
-              placement="right"
-              className="demo-tooltip"
-            >
-              <button className="demo-button">Scroll Test Button</button>
-            </Tooltip>
-
-            <p style={{ marginTop: '50px' }}>More content here...</p>
-
-            <Tooltip
-              content="Bottom tooltip that flips when needed"
-              placement="bottom"
-              className="demo-tooltip"
-            >
-              <button className="demo-button">Bottom Button</button>
-            </Tooltip>
-
-            <p style={{ marginTop: '100px' }}>Keep scrolling...</p>
-          </div>
-        </div>
-
-        <h2>Nested Scroll Containers Test</h2>
-        <p>
-          This tests multiple levels of scrollable containers - all ancestor
-          scrolls are tracked!
-        </p>
-
-        <div className="nested-scroll-demo">
-          <h3>Outer Scrollable Container (Blue Border)</h3>
-          <p>Scroll this outer container...</p>
-
-          <div className="inner-scroll-container">
-            <div className="inner-scroll-content">
-              <h4>Inner Scrollable Container (Red Border)</h4>
-              <p>This container can also scroll independently!</p>
-
-              <Tooltip
-                content="I track ALL ancestor scrolls! Try scrolling both containers and the window."
-                placement="right"
-                className="demo-tooltip"
-                style={{ maxWidth: '250px' }}
-              >
-                <button className="demo-button">Multi-Scroll Test</button>
-              </Tooltip>
-
-              <p style={{ marginTop: '50px' }}>
-                Scroll this inner container up and down...
-              </p>
-
-              <Tooltip
-                content="Perfect positioning even in deeply nested scrollable containers!"
-                placement="left"
-                className="demo-tooltip"
-              >
-                <button className="demo-button">Deep Nesting Test</button>
-              </Tooltip>
-
-              <p style={{ marginTop: '50px' }}>More nested content...</p>
-            </div>
-          </div>
-
-          <p style={{ marginTop: '50px' }}>
-            Content after the inner container...
-          </p>
-
-          <Tooltip
-            content="Outer container positioning test"
-            placement="top"
-            className="demo-tooltip"
-          >
-            <button className="demo-button">Outer Container</button>
-          </Tooltip>
-        </div>
-
-        <h2>Multiple Placements</h2>
-        <div
+      <div className="test-section">
+        <h2 className="section-title">📜 Scroll Management Test</h2>
+        <p
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '20px',
-            margin: '50px 0',
+            color: '#f0fdf4',
+            textAlign: 'center',
+            marginBottom: '2rem',
           }}
         >
-          {(
-            [
-              'top',
-              'bottom',
-              'left',
-              'right',
-              'top-start',
-              'top-end',
-              'bottom-start',
-              'bottom-end',
-            ] as const
-          ).map((placement) => (
-            <Tooltip
-              key={placement}
-              content={`Placement: ${placement}`}
-              placement={placement}
-              className="demo-tooltip"
-            >
-              <button className="demo-button">{placement}</button>
-            </Tooltip>
-          ))}
-        </div>
+          Scroll this container - the jungle tooltip follows the element! 🦋
+        </p>
 
-        <h2>Edge Cases & Performance Test</h2>
-        <p>Testing complex scenarios and performance optimizations:</p>
+        <div
+          className="scroll-container"
+          style={{
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '2px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: '12px',
+          }}
+        >
+          <div className="scroll-content">
+            <p style={{ color: '#f0fdf4' }}>
+              🌿 Scroll this jungle container up and down...
+            </p>
+
+            <Tooltip
+              className="jungle-tooltip"
+              content={
+                <div className="tooltip-content">
+                  <div className="tooltip-header">
+                    <span className="tooltip-icon">📜</span>
+                    <span className="tooltip-title">Scroll Tracker</span>
+                  </div>
+                  <div className="tooltip-body">
+                    🦋 I move with scroll! Position updates automatically like a
+                    butterfly following flowers.
+                  </div>
+                </div>
+              }
+              placement="right"
+              arrow
+              zIndex={2000}
+              arrowClassName="jungle-arrow"
+            >
+              <button className="demo-button">🌿 Jungle Scroll Test</button>
+            </Tooltip>
+
+            <p style={{ marginTop: '50px', color: '#f0fdf4' }}>
+              🌺 More jungle content here...
+            </p>
+
+            <Tooltip
+              className="jungle-tooltip"
+              content={
+                <div className="tooltip-content">
+                  <div className="tooltip-header">
+                    <span className="tooltip-icon">🔄</span>
+                    <span className="tooltip-title">Auto Flip</span>
+                  </div>
+                  <div className="tooltip-body">
+                    🌴 Bottom jungle tooltip that flips when needed!
+                  </div>
+                </div>
+              }
+              placement="bottom"
+              arrow
+              arrowClassName="jungle-arrow"
+              zIndex={2000}
+            >
+              <button className="demo-button">🥑 Bottom Avocado</button>
+            </Tooltip>
+
+            <p style={{ marginTop: '100px', color: '#f0fdf4' }}>
+              🦋 Keep exploring the jungle...
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <ShowCases />
+
+      <Animations />
+
+      <div className="test-section">
+        <h2 className="section-title">🚀 Final Jungle Experience</h2>
+        <p
+          style={{
+            color: '#f0fdf4',
+            textAlign: 'center',
+            marginBottom: '2rem',
+          }}
+        >
+          The ultimate jungle tooltip experience with amazing animations! 🦋
+        </p>
 
         <div
           style={{
             display: 'flex',
-            gap: '20px',
-            margin: '50px 0',
+            justifyContent: 'center',
+            gap: '30px',
             flexWrap: 'wrap',
           }}
         >
           <Tooltip
-            content="I handle complex positioning edge cases!"
+            className="jungle-tooltip"
+            content={
+              <div className="tooltip-content">
+                <div className="tooltip-header">
+                  <span className="tooltip-icon">🎬</span>
+                  <span className="tooltip-title">Recording Ready</span>
+                </div>
+                <div className="tooltip-body">
+                  🎥 Perfect for recording demos with amazing zoom animations
+                  and jungle vibes!
+                </div>
+              </div>
+            }
             placement="top"
-            className="demo-tooltip"
+            arrow
+            arrowClassName="jungle-arrow"
+            zIndex={2000}
           >
-            <button className="demo-button">Edge Case Test</button>
+            <button
+              className="demo-button"
+              style={{ padding: '15px 25px', fontSize: '16px' }}
+            >
+              🎬 Ready to Record!
+            </button>
           </Tooltip>
 
           <Tooltip
-            content="Performance optimized with capture phase scroll handling"
+            className="jungle-tooltip"
+            content={
+              <div className="tooltip-content">
+                <div className="tooltip-header">
+                  <span className="tooltip-icon">✨</span>
+                  <span className="tooltip-title">Amazing UI</span>
+                </div>
+                <div className="tooltip-body">
+                  🌟 Jungle-themed UI with avocado elements and smooth
+                  animations - perfect for social media!
+                </div>
+              </div>
+            }
             placement="bottom"
-            className="demo-tooltip"
+            arrow
+            arrowClassName="jungle-arrow"
+            zIndex={2000}
           >
-            <button className="demo-button">Performance Test</button>
-          </Tooltip>
-
-          <Tooltip
-            content="Cross-browser scroll detection with fallbacks"
-            placement="left"
-            className="demo-tooltip"
-          >
-            <button className="demo-button">Cross-Browser</button>
-          </Tooltip>
-
-          <Tooltip
-            content="Accurate scrollable content detection"
-            placement="right"
-            className="demo-tooltip"
-          >
-            <button className="demo-button">Scroll Detection</button>
+            <button
+              className="demo-button"
+              style={{ padding: '15px 25px', fontSize: '16px' }}
+            >
+              ✨ Amazing Animations!
+            </button>
           </Tooltip>
         </div>
 
-        <h2>Window Scroll Test</h2>
-        <p>
-          Scroll the entire page - tooltips maintain position relative to their
-          triggers:
-        </p>
-
-        <div style={{ display: 'flex', gap: '20px', margin: '50px 0' }}>
-          <Tooltip
-            content="Window scroll tracking!"
-            placement="top"
-            className="demo-tooltip"
-          >
-            <button className="demo-button">Fixed to Element</button>
-          </Tooltip>
-
-          <Tooltip
-            content={longContent}
-            placement="bottom"
-            className="demo-tooltip"
-            style={{ maxWidth: '300px' }}
-          >
-            <button className="demo-button">Long Content</button>
-          </Tooltip>
+        <div
+          style={{ textAlign: 'center', marginTop: '3rem', color: '#f0fdf4' }}
+        >
+          <p style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>
+            🎯 <strong>Perfect for Recording:</strong>
+          </p>
+          <p>• Auto-cycling avocado tooltips with mega zoom effects</p>
+          <p>• Jungle background with animated elements</p>
+          <p>• Professional tooltip styling with shimmer effects</p>
+          <p>• Play/pause controls for perfect timing</p>
+          <p>• Click individual avocados to focus on specific tooltips</p>
         </div>
       </div>
     </div>
