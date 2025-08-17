@@ -1,11 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { Tooltip } from './index';
-import ShowCases from './ShowCases';
-import Animations from './Animations';
-import Basic from './Basic';
-import Demo from './Demo';
+import { Tooltip } from '../src/index';
+import ShowCases from './components/ShowCases';
+import Animations from './components/Animations';
+import Basic from './components/Basic';
+import Demo from './components/Demo';
 
 // Amazing Jungle Theme Styles with Avocado Animations
 const demoStyles = `
@@ -1239,10 +1239,6 @@ body {
   background: linear-gradient(135deg, #fef2f2, #fee2e2);
 }
 `;
-
-export default {};
-
-// Jungle Avocado Demo Component
 
 export function Test() {
   // Inject styles

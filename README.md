@@ -81,7 +81,7 @@ function StyledExample() {
 | -------------------- | ------------------------- | --------------- | ------------------------------------------------------------ |
 | `children`           | `React.ReactNode`         | (required)      | The element that triggers the tooltip                        |
 | `content`            | `React.ReactNode`         | (required)      | The content to be displayed in the tooltip                   |
-| `placement`          | `PositionType`            | `'top'`         | Tooltip placement relative to the trigger element            |
+| `placement`          | `Placement`               | `'top'`         | Tooltip placement relative to the trigger element            |
 | `className`          | `string`                  | `''`            | Additional CSS classes to apply to the tooltip               |
 | `offset`             | `number`                  | `4`             | Distance between tooltip and trigger element in pixels       |
 | `zIndex`             | `number`                  | `undefined`     | Z-index value for the tooltip                                |

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from './index';
+import { Tooltip } from '../../src/index';
 
 export default function Animations() {
   return (

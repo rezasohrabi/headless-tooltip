@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "dist"
-  }
+    "declarationDir": "dev-dist"
+  },
+  "include": ["dev/**/*"]
 }

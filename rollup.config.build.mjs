@@ -15,11 +15,15 @@ export default [
   {
     input: 'src/index.tsx',
     output: [
-      { file: pkg.main, format: 'cjs', sourcemap: false },
+      {
+        file: pkg.main,
+        format: 'cjs',
+        sourcemap: true,
+      },
       {
         file: pkg.module,
         format: 'esm',
-        sourcemap: false,
+        sourcemap: true,
       },
     ],
     plugins: [
@@ -28,16 +32,16 @@ export default [
       commonjs(),
       typescript({
         tsconfig: './tsconfig.build.json',
-        sourceMap: false,
+        sourceMap: true,
       }),
       postcss(),
       terser(),
       json({
         compact: true,
       }),
-      analyze(),
+      analyze({ summaryOnly: true }),
     ],
-    external: ['react', 'react-dom'],
+    external: [...Object.keys(pkg.peerDependencies || {})],
   },
   {
     input: 'src/index.tsx',

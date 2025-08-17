@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import { PositionType } from 'react-uni-popper';
+import { Placement } from './Placement';
 
 /**
  * Props interface for the Tooltip component.
@@ -30,7 +30,7 @@ export interface TooltipProps
    * The preferred placement of the tooltip relative to the trigger element.
    * @default "top"
    */
-  placement?: PositionType;
+  placement?: Placement;
 
   /**
    * Distance in pixels between the tooltip and the trigger element.

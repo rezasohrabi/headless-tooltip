@@ -2,17 +2,17 @@
   "name": "headless-tooltip",
   "version": "1.0.0",
   "description": "A minimal, accessible, and unstyled tooltip component for React",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/headless-tooltip.cjs",
+  "module": "dist/headless-tooltip.mjs",
   "type": "module",
   "sideEffects": false,
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
+  "types": "dist/headless-tooltip.d.ts",
   "scripts": {
     "build": "rimraf dist && cross-env NODE_ENV=production rollup -c rollup.config.build.mjs",
-    "dev": "rimraf dist && cross-env NODE_ENV=development rollup -c rollup.config.dev.mjs -w",
+    "dev": "rimraf dev-dist && cross-env NODE_ENV=development rollup -c rollup.config.dev.mjs -w",
     "test": "vitest run --config vitest.config.ts",
     "test:watch": "vitest --config vitest.config.ts --watch",
     "test:ui": "vitest --ui",
