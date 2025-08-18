@@ -32,7 +32,8 @@ export default [
       typescript({
         tsconfig: './tsconfig.dev.json',
         jsx: 'react-jsx',
-        include: ['dev/**/*', 'src/**/*'],
+        include: ['dev/**/*.ts', 'dev/**/*.tsx', 'src/**/*.ts', 'src/**/*.tsx'],
+        exclude: ['**/*.css', '**/*.scss', '**/*.sass'],
       }),
       postcss({
         extract: true,
