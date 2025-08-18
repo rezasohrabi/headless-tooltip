@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "dev-dist"
+    "declarationDir": "dev-dist",
+    "rootDir": ".",
+    "jsx": "react-jsx"
   },
-  "include": ["dev/**/*"]
+  "include": ["dev/**/*", "src/**/*"]
 }

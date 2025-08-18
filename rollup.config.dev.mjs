@@ -15,13 +15,13 @@ const isDev = process.env.NODE_ENV === 'development';
 
 export default [
   {
-    input: 'src/index.dev.tsx',
+    input: 'dev/index.dev.tsx',
     output: [
-      { file: pkg.main, format: 'cjs', sourcemap: true },
+      { file: 'dev-dist/index.cjs', format: 'cjs', sourcemap: true },
       {
-        file: pkg.module,
+        file: 'dev-dist/index.mjs',
         format: 'esm',
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
     plugins: [
@@ -31,29 +31,35 @@ export default [
         ),
         preventAssignment: true,
       }),
-      resolve(),
+      resolve({
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        preferBuiltins: false,
+      }),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.dev.json',
+        jsx: 'react-jsx',
+        include: ['dev/**/*', 'src/**/*'],
+        sourceMap: true,
       }),
       postcss(),
       serve({
         open: true,
-        contentBase: ['dist', '.'],
-        port: 3000,
+        contentBase: ['dev-dist', '.'],
+        port: 3001,
       }),
       livereload({
-        watch: 'dist',
-        port: 3000,
+        watch: 'dev-dist',
+        port: 3001,
       }),
       json(),
     ],
     external: [],
   },
   {
-    input: 'src/index.tsx',
+    input: 'dev/index.dev.tsx',
     output: {
-      file: pkg.types,
+      file: 'dev-dist/index.d.ts',
       format: 'esm',
     },
     plugins: [dts()],
