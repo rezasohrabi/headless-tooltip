@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
+
 import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
 import analyze from 'rollup-plugin-analyzer';
@@ -34,7 +34,6 @@ export default [
         tsconfig: './tsconfig.build.json',
         sourceMap: true,
       }),
-      postcss(),
       terser(),
       json({
         compact: true,
