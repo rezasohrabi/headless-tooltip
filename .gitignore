@@ -5,3 +5,4 @@ coverage
 *storybook.log
 storybook-static
 .qodo
+stats.html

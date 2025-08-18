@@ -3,10 +3,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
-import analyze from 'rollup-plugin-analyzer';
 import fs from 'fs';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
@@ -38,7 +38,10 @@ export default [
       json({
         compact: true,
       }),
-      analyze({ summaryOnly: true }),
+      visualizer({
+        brotliSize: true,
+        gzipSize: true,
+      }),
     ],
     external: [...Object.keys(pkg.peerDependencies || {})],
   },

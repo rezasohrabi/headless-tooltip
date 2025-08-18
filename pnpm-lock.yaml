@@ -166,9 +166,6 @@ devDependencies:
   rollup:
     specifier: ^4.36.0
     version: 4.36.0
-  rollup-plugin-analyzer:
-    specifier: ^4.0.0
-    version: 4.0.0
   rollup-plugin-dts:
     specifier: ^6.2.0
     version: 6.2.0(rollup@4.36.0)(typescript@5.8.2)
@@ -7006,11 +7003,6 @@ packages:
     dependencies:
       glob: 11.0.1
       package-json-from-dist: 1.0.1
-    dev: true
-
-  /rollup-plugin-analyzer@4.0.0:
-    resolution: {integrity: sha512-LL9GEt3bkXp6Wa19SNR5MWcvHNMvuTFYg+eYBZN2OIFhSWN+pEJUQXEKu5BsOeABob3x9PDaLKW7w5iOJnsESQ==}
-    engines: {node: '>=8.0.0'}
     dev: true
 
   /rollup-plugin-dts@6.2.0(rollup@4.36.0)(typescript@5.8.2):
