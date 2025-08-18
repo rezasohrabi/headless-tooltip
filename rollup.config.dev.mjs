@@ -8,6 +8,7 @@ import serve from 'rollup-plugin-serve';
 import replace from '@rollup/plugin-replace';
 import fs from 'fs';
 import livereload from 'rollup-plugin-livereload';
+import html from '@rollup/plugin-html';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -43,16 +44,34 @@ export default [
         sourceMap: true,
       }),
       postcss(),
+      json(),
+      html({
+        fileName: 'index.html',
+        title: 'Tooltip Component',
+
+        template: () => `
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Tooltip Component</title>
+          </head>
+          <body>
+            <div id="root"></div>
+            <script type="module" src="./index.mjs"></script>
+          </body>
+        </html>`,
+      }),
       serve({
         open: true,
         contentBase: ['dev-dist', '.'],
-        port: 3001,
+        port: 3000,
       }),
       livereload({
         watch: 'dev-dist',
-        port: 3001,
+        port: 3000,
       }),
-      json(),
     ],
     external: [],
   },

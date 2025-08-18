@@ -43,6 +43,9 @@ devDependencies:
   '@rollup/plugin-commonjs':
     specifier: ^28.0.3
     version: 28.0.3(rollup@4.36.0)
+  '@rollup/plugin-html':
+    specifier: ^2.0.0
+    version: 2.0.0(rollup@4.36.0)
   '@rollup/plugin-json':
     specifier: ^6.1.0
     version: 6.1.0(rollup@4.36.0)
@@ -2262,6 +2265,18 @@ packages:
       is-reference: 1.2.1
       magic-string: 0.30.17
       picomatch: 4.0.2
+      rollup: 4.36.0
+    dev: true
+
+  /@rollup/plugin-html@2.0.0(rollup@4.36.0):
+    resolution: {integrity: sha512-6S0ezKfDRw5FvHk3xm1T/eXP9IlLf82zmV+z2V1/yQL5hXwIUL/Gl2RrNMMIe2rt85rk6+0smvSAtjfTLGylDQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
       rollup: 4.36.0
     dev: true
 
@@ -7009,7 +7024,7 @@ packages:
       rollup: 4.36.0
       typescript: 5.8.2
     optionalDependencies:
-      '@babel/code-frame': 7.26.2
+      '@babel/code-frame': 7.27.1
     dev: true
 
   /rollup-plugin-livereload@2.0.5:
