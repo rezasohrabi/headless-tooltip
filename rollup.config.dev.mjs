@@ -6,30 +6,22 @@ import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
 import serve from 'rollup-plugin-serve';
 import replace from '@rollup/plugin-replace';
-import fs from 'fs';
 import livereload from 'rollup-plugin-livereload';
 import html from '@rollup/plugin-html';
-
-const pkg = JSON.parse(fs.readFileSync('./package.json'));
-
-const isDev = process.env.NODE_ENV === 'development';
 
 export default [
   {
     input: 'dev/index.dev.tsx',
     output: [
-      { file: 'dev-dist/index.cjs', format: 'cjs', sourcemap: true },
+      { file: 'dev-dist/index.cjs', format: 'cjs' },
       {
         file: 'dev-dist/index.mjs',
         format: 'esm',
-        sourcemap: false,
       },
     ],
     plugins: [
       replace({
-        'process.env.NODE_ENV': JSON.stringify(
-          isDev ? 'development' : 'production',
-        ),
+        'process.env.NODE_ENV': JSON.stringify('development'),
         preventAssignment: true,
       }),
       resolve({
@@ -41,9 +33,12 @@ export default [
         tsconfig: './tsconfig.dev.json',
         jsx: 'react-jsx',
         include: ['dev/**/*', 'src/**/*'],
-        sourceMap: true,
       }),
-      postcss(),
+      postcss({
+        extract: true,
+        modules: false,
+        minimize: false,
+      }),
       json(),
       html({
         fileName: 'index.html',
@@ -55,7 +50,8 @@ export default [
           <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Tooltip Component</title>
+            <title>React Headless Tooltip</title>
+            <link rel="stylesheet" href="./index.css" />
           </head>
           <body>
             <div id="root"></div>
@@ -73,7 +69,6 @@ export default [
         port: 3000,
       }),
     ],
-    external: [],
   },
   {
     input: 'dev/index.dev.tsx',

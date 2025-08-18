@@ -4,7 +4,8 @@
     "declaration": true,
     "declarationDir": "dev-dist",
     "rootDir": ".",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "sourceMap": false
   },
   "include": ["dev/**/*", "src/**/*"]
 }
