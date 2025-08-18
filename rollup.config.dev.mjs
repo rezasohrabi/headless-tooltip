@@ -76,6 +76,7 @@ export default [
       file: 'dev-dist/index.d.ts',
       format: 'esm',
     },
+    external: [/\.css$/],
     plugins: [dts()],
   },
 ];
