@@ -1,6 +1,6 @@
 {
   "name": "headless-tooltip",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A minimal, accessible, and unstyled tooltip component for React",
   "main": "dist/headless-tooltip.cjs",
   "module": "dist/headless-tooltip.mjs",
@@ -114,8 +114,6 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
-    "react-transition-group": "^4.4.5",
-    "react-uni-popper": "^1.0.2",
-    "transition-hook": "^1.5.2"
+    "react-uni-popper": "^1.0.2"
   }
 }
