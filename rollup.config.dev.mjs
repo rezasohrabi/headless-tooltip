@@ -6,56 +6,78 @@ import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
 import serve from 'rollup-plugin-serve';
 import replace from '@rollup/plugin-replace';
-import fs from 'fs';
 import livereload from 'rollup-plugin-livereload';
-
-const pkg = JSON.parse(fs.readFileSync('./package.json'));
-
-const isDev = process.env.NODE_ENV === 'development';
+import html from '@rollup/plugin-html';
 
 export default [
   {
-    input: 'src/index.dev.tsx',
+    input: 'dev/index.dev.tsx',
     output: [
-      { file: pkg.main, format: 'cjs', sourcemap: true },
+      { file: 'dev-dist/index.cjs', format: 'cjs' },
       {
-        file: pkg.module,
+        file: 'dev-dist/index.mjs',
         format: 'esm',
-        sourcemap: true,
       },
     ],
     plugins: [
       replace({
-        'process.env.NODE_ENV': JSON.stringify(
-          isDev ? 'development' : 'production',
-        ),
+        'process.env.NODE_ENV': JSON.stringify('development'),
         preventAssignment: true,
       }),
-      resolve(),
+      resolve({
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        preferBuiltins: false,
+      }),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.dev.json',
+        jsx: 'react-jsx',
+        include: ['dev/**/*.ts', 'dev/**/*.tsx', 'src/**/*.ts', 'src/**/*.tsx'],
+        exclude: ['**/*.css', '**/*.scss', '**/*.sass'],
       }),
-      postcss(),
+      postcss({
+        extract: true,
+        modules: false,
+        minimize: false,
+      }),
+      json(),
+      html({
+        fileName: 'index.html',
+        title: 'Tooltip Component',
+
+        template: () => `
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>React Headless Tooltip</title>
+            <link rel="stylesheet" href="./index.css" />
+          </head>
+          <body>
+            <div id="root"></div>
+            <script type="module" src="./index.mjs"></script>
+          </body>
+        </html>`,
+      }),
       serve({
         open: true,
-        contentBase: ['dist', '.'],
+        contentBase: ['dev-dist', '.'],
         port: 3000,
       }),
       livereload({
-        watch: 'dist',
+        watch: 'dev-dist',
         port: 3000,
       }),
-      json(),
     ],
-    external: [],
   },
   {
-    input: 'src/index.tsx',
+    input: 'dev/index.dev.tsx',
     output: {
-      file: pkg.types,
+      file: 'dev-dist/index.d.ts',
       format: 'esm',
     },
+    external: [/\.css$/],
     plugins: [dts()],
   },
 ];

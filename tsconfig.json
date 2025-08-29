@@ -13,6 +13,7 @@
   "exclude": [
     "node_modules",
     "dist",
+    "dev-dist",
     "storybook-static",
     "src/**/*.stories.ts",
     "src/**/*.test.tsx",

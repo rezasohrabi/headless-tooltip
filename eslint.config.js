@@ -46,6 +46,7 @@ export default tseslint.config({
   ],
   rules: {
     ...reactHooks.configs.recommended.rules,
+    'storybook/default-exports': 'off',
   },
   ignores: [
     '**/node_modules/**',

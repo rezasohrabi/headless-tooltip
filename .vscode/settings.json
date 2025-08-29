@@ -2,5 +2,7 @@
   "files.eol": "\n",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.workbench.orientation": "vertical"
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark"
 }

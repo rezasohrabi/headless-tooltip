@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Tooltip from '../src/index';
+import { Tooltip } from '../src/index';
 import React from 'react';
-import type { PositionType } from '../src/index';
 import './index.css';
+import { Placement } from '../src/types';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Tooltip',
@@ -147,7 +147,7 @@ export const WithDifferentPlacements: Story = {
         >
           <Tooltip
             content={`Tooltip on ${placement}`}
-            placement={placement as PositionType}
+            placement={placement as Placement}
             className="styled-tooltip"
           >
             <button className="placement-button">{placement}</button>
