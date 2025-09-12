@@ -11,29 +11,96 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
-  overflow: hidden;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   padding: 0;
   margin: 0;
   position: relative;
-  /* background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 30%, #16213e 100%); */
+  overflow: hidden;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+
+  /* Modern gradient background */
+  background:
+    /* Ambient light gradients */
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(168, 85, 247, 0.15) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(59, 130, 246, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(139, 92, 246, 0.08) 0%,
+      transparent 70%
+    ),
+    /* Base gradient */
+      linear-gradient(
+        135deg,
+        #0f0f23 0%,
+        #1a1a3a 25%,
+        #16213e 50%,
+        #1f1f3a 75%,
+        #0f0f23 100%
+      );
+
+  color: white;
+
+  /* Animated background effect */
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  animation: backgroundShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position:
+      0% 0%,
+      100% 100%,
+      50% 0%,
+      0% 0%;
+  }
+  100% {
+    background-position:
+      100% 100%,
+      0% 0%,
+      50% 100%,
+      100% 100%;
+  }
+}
+
+/* Modern glass morphism overlay */
+.demo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background:
     radial-gradient(
-      circle at 20% 80%,
-      rgba(99, 102, 241, 0.15) 0%,
+      circle at 30% 70%,
+      rgba(255, 255, 255, 0.03) 0%,
       transparent 50%
     ),
     radial-gradient(
-      circle at 80% 20%,
-      rgba(139, 92, 246, 0.15) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
-      rgba(59, 130, 246, 0.1) 0%,
+      circle at 70% 30%,
+      rgba(99, 102, 241, 0.05) 0%,
       transparent 50%
     );
-  color: white;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .demo-section {
+    padding: 1rem;
+  }
 }
