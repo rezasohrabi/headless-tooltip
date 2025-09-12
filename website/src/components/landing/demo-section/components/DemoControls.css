@@ -1,0 +1,21 @@
+.demo-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.demo-counter {
+  background: rgba(15, 15, 35, 0.8);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  text-align: center;
+  color: white;
+}

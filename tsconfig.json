@@ -21,6 +21,7 @@
     ".storybook",
     ".husky",
     "public",
-    "docs"
+    "docs",
+    "website/**/*"
   ]
 }

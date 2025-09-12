@@ -1,0 +1,10 @@
+.tooltip-trigger {
+  font-size: 3rem;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 5;
+  background: none;
+  border: none;
+  padding: 0;
+}
