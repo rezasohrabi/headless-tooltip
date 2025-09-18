@@ -29,7 +29,7 @@ const triggers = [
     y: 15,
     tooltip: '🎨 Modern Design',
     message: 'Beautiful dark theme UI!',
-    animation: 'back-in-out',
+    animation: 'roll-in-out',
     icon: <img src={Plannet} width={45} height={45} alt="sun" />,
   },
   {
@@ -117,7 +117,6 @@ const triggers = [
 ];
 
 function AutoPlayTooltips() {
-  const [activeTrigger, setActiveTrigger] = useState(1);
   const [isOpen, setIsOpen] = useState(new Array(triggers.length).fill(false));
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -138,14 +137,11 @@ function AutoPlayTooltips() {
 
   // Main tooltip cycle effect
   useEffect(() => {
-    let timeout: NodeJS.Timeout | null = null;
-
     const runCycle = (index: number) => {
       currentIndexRef.current = index;
 
       // 1) OPEN tooltip
       setIsOpen((prev) => prev.map((_, i) => i === index));
-      setActiveTrigger(index);
 
       // 2) Keep it open (400ms for animation + 200ms visible = 600ms total)
       timeoutRef.current = setTimeout(() => {
