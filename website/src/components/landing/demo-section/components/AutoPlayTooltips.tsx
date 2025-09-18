@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Tooltip } from 'headless-tooltip';
 import './AutoPlayTooltips.css';
 import Meteorite from '@site/static/img/meteorite.png';
@@ -119,29 +119,9 @@ const triggers = [
 function AutoPlayTooltips() {
   const [activeTrigger, setActiveTrigger] = useState(1);
   const [isOpen, setIsOpen] = useState(new Array(triggers.length).fill(false));
-  const [isVisible, setIsVisible] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const currentIndexRef = useRef(0);
-
-  // Visibility detection using Intersection Observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 },
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
   // Page visibility detection
   useEffect(() => {
@@ -173,15 +153,15 @@ function AutoPlayTooltips() {
         setIsOpen((prev) => prev.map(() => false));
 
         timeoutRef.current = setTimeout(() => {
-          // 4) Move to next tooltip only if still visible and not paused
+          // 4) Move to next tooltip
           const nextIndex = (index + 1) % triggers.length;
           runCycle(nextIndex);
         }, 400); // exit animation
       }, 1400); // open duration + visible time
     };
 
-    // Only start/continue cycle if visible and not paused
-    if (isVisible && !isPaused) {
+    // Only start/continue cycle if not paused
+    if (!isPaused) {
       runCycle(currentIndexRef.current);
     } else {
       // Clear current timeout and close any open tooltips
@@ -198,10 +178,10 @@ function AutoPlayTooltips() {
         timeoutRef.current = null;
       }
     };
-  }, [triggers.length, isVisible, isPaused]);
+  }, [triggers.length, isPaused]);
 
   return (
-    <div ref={containerRef}>
+    <div>
       {triggers.map((trigger, index) => (
         <Tooltip
           placement="top"
