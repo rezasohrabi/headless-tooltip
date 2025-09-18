@@ -169,6 +169,11 @@ function LibrariesSection() {
   return (
     <section className="floating-tooltips-section">
       <div className="floating-background">
+        <h2 className="floating-title">Works with Any Design System</h2>
+        <p className="floating-subtitle">
+          Seamlessly integrate with your favorite UI library. Every tooltip can
+          be styled to match your design perfectly.
+        </p>
         <div className="floating-container">
           {floatingTooltips.map((tooltip) => (
             <div
@@ -177,6 +182,7 @@ function LibrariesSection() {
               style={{
                 left: `${tooltip.x}%`,
                 top: `${tooltip.y}%`,
+                animationDelay: `${tooltip.id * 0.2}s`,
               }}
             >
               <Tooltip
@@ -186,6 +192,7 @@ function LibrariesSection() {
                 arrow={true}
                 arrowSize={tooltip.arrowSize}
                 className={tooltip.className}
+                disableInteractive={false}
               >
                 <div className="invisible-trigger" />
               </Tooltip>
