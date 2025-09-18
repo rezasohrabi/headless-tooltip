@@ -70,9 +70,3 @@
   z-index: 2;
   line-height: 1.4;
 }
-
-.tooltip-arrow {
-  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-  border: 1px solid #4338ca;
-  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.4);
-}
