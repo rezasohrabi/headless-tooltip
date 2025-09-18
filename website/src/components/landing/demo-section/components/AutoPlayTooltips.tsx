@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Tooltip } from 'headless-tooltip';
 import './AutoPlayTooltips.css';
 import Meteorite from '@site/static/img/meteorite.png';
@@ -118,39 +118,90 @@ const triggers = [
 
 function AutoPlayTooltips() {
   const [activeTrigger, setActiveTrigger] = useState(1);
-
   const [isOpen, setIsOpen] = useState(new Array(triggers.length).fill(false));
+  const [isVisible, setIsVisible] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const currentIndexRef = useRef(0);
 
+  // Visibility detection using Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 },
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Page visibility detection
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsPaused(document.hidden);
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
+  // Main tooltip cycle effect
   useEffect(() => {
     let timeout: NodeJS.Timeout | null = null;
 
     const runCycle = (index: number) => {
+      currentIndexRef.current = index;
+
       // 1) OPEN tooltip
       setIsOpen((prev) => prev.map((_, i) => i === index));
       setActiveTrigger(index);
 
       // 2) Keep it open (400ms for animation + 200ms visible = 600ms total)
-      timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         // 3) CLOSE tooltip (200ms for exit animation)
         setIsOpen((prev) => prev.map(() => false));
 
-        timeout = setTimeout(() => {
-          // 4) Move to next tooltip
+        timeoutRef.current = setTimeout(() => {
+          // 4) Move to next tooltip only if still visible and not paused
           const nextIndex = (index + 1) % triggers.length;
           runCycle(nextIndex);
         }, 400); // exit animation
       }, 1400); // open duration + visible time
     };
 
-    runCycle(0); // start with first tooltip
+    // Only start/continue cycle if visible and not paused
+    if (isVisible && !isPaused) {
+      runCycle(currentIndexRef.current);
+    } else {
+      // Clear current timeout and close any open tooltips
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      setIsOpen(new Array(triggers.length).fill(false));
+    }
 
     return () => {
-      if (timeout) clearTimeout(timeout);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
     };
-  }, [triggers.length]);
+  }, [triggers.length, isVisible, isPaused]);
 
   return (
-    <div>
+    <div ref={containerRef}>
       {triggers.map((trigger, index) => (
         <Tooltip
           placement="top"
