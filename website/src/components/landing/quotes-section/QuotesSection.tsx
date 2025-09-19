@@ -382,6 +382,16 @@ function QuotesSection() {
             />
           ))}
         </div>
+
+        {/* Footer */}
+        <footer className="quotes-footer">
+          <div className="footer-content">
+            <p className="footer-text">
+              Built with ❤️ using <strong>Headless Tooltip</strong>
+            </p>
+            <p className="footer-copyright">© 2024 Headless Tooltip.</p>
+          </div>
+        </footer>
       </div>
     </section>
   );

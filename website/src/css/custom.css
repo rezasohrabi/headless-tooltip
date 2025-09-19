@@ -33,3 +33,7 @@
 .prism-code {
   font-size: 14px;
 }
+
+#__docusaurus {
+  overflow: hidden;
+}
