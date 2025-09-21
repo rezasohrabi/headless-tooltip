@@ -2,264 +2,237 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { Tooltip } from '../src/index';
-import ShowCases from './components/ShowCases';
-import Animations from './components/Animations';
-import Basic from './components/Basic';
-import Demo from './components/Demo';
 import './styles.css';
 
 export function Test() {
   return (
-    <div className="tooltip-demo">
-      <Demo />
+    <div className="dev-container">
+      <h1>Headless Tooltip - Development & Testing</h1>
 
-      <Basic />
+      {/* Basic Functionality Test */}
+      <section className="test-section">
+        <h2>Basic Functionality</h2>
+        <p>Basic tooltip with hover trigger</p>
+        <Tooltip content="Hello! Basic tooltip test">
+          <button>Hover me (basic)</button>
+        </Tooltip>
+      </section>
 
-      <div className="test-section">
-        <h2 className="section-title">🎯 Collision Detection Test</h2>
-        <p
-          style={{
-            color: '#f0fdf4',
-            textAlign: 'center',
-            marginBottom: '2rem',
-          }}
-        >
-          Try tooltips near viewport edges - they&apos;ll automatically flip to
-          stay visible! 🌿
-        </p>
+      {/* Placement Tests */}
+      <section className="test-section">
+        <h2>Placement Tests</h2>
+        <p>Testing different tooltip placements</p>
+        <div className="placement-grid">
+          {(
+            [
+              'top',
+              'bottom',
+              'left',
+              'right',
+              'top-start',
+              'top-end',
+              'bottom-start',
+              'bottom-end',
+            ] as const
+          ).map((placement) => (
+            <Tooltip
+              key={placement}
+              content={placement}
+              placement={placement}
+              arrow
+            >
+              <button>{placement}</button>
+            </Tooltip>
+          ))}
+        </div>
+      </section>
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-          }}
-        >
-          <Tooltip
-            className="jungle-tooltip"
-            transition={{
-              enable: true,
-              enterDuration: 400,
-              exitDuration: 250,
-            }}
-            content={
-              <div className="tooltip-content">
-                <div className="tooltip-header">
-                  <span className="tooltip-icon">🔄</span>
-                  <span className="tooltip-title">Smart Flip</span>
-                </div>
-                <div className="tooltip-body">
-                  🌿 I flip when near edges to stay in the jungle!
-                </div>
-              </div>
-            }
-            placement="top"
-            arrow
-            zIndex={2000}
-            arrowClassName="jungle-arrow"
-          >
-            <button className="demo-button">🥑 Top Left Corner</button>
+      {/* Edge Detection Test */}
+      <section className="test-section">
+        <h2>Edge Detection Test</h2>
+        <p>Tooltips near viewport edges should auto-flip</p>
+        <div className="edge-test">
+          <Tooltip content="Should flip when near edge" placement="top" arrow>
+            <button style={{ position: 'absolute', top: '10px', left: '10px' }}>
+              Top-left corner
+            </button>
           </Tooltip>
-
-          <Tooltip
-            className="jungle-tooltip"
-            transition={{
-              enable: true,
-              enterDuration: 400,
-              exitDuration: 250,
-            }}
-            content={
-              <div className="tooltip-content">
-                <div className="tooltip-header">
-                  <span className="tooltip-icon">🎯</span>
-                  <span className="tooltip-title">Smart Position</span>
-                </div>
-                <div className="tooltip-body">
-                  ✨ Smart jungle positioning at work!
-                </div>
-              </div>
-            }
-            placement="top"
-            arrow
-            zIndex={2000}
-            arrowClassName="jungle-arrow"
-          >
-            <button className="demo-button">🌴 Top Right Corner</button>
+          <Tooltip content="Should flip when near edge" placement="top" arrow>
+            <button
+              style={{ position: 'absolute', top: '10px', right: '10px' }}
+            >
+              Top-right corner
+            </button>
           </Tooltip>
         </div>
-      </div>
+      </section>
 
-      <div className="test-section">
-        <h2 className="section-title">📜 Scroll Management Test</h2>
-        <p
-          style={{
-            color: '#f0fdf4',
-            textAlign: 'center',
-            marginBottom: '2rem',
-          }}
-        >
-          Scroll this container - the jungle tooltip follows the element! 🦋
-        </p>
-
-        <div
-          className="scroll-container"
-          style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            border: '2px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: '12px',
-          }}
-        >
+      {/* Scroll Test */}
+      <section className="test-section">
+        <h2>Scroll Behavior Test</h2>
+        <p>Tooltip should follow element during scroll</p>
+        <div className="scroll-container">
           <div className="scroll-content">
-            <p style={{ color: '#f0fdf4' }}>
-              🌿 Scroll this jungle container up and down...
-            </p>
-
+            <p>Scroll this container...</p>
             <Tooltip
-              className="jungle-tooltip"
-              content={
-                <div className="tooltip-content">
-                  <div className="tooltip-header">
-                    <span className="tooltip-icon">📜</span>
-                    <span className="tooltip-title">Scroll Tracker</span>
-                  </div>
-                  <div className="tooltip-body">
-                    🦋 I move with scroll! Position updates automatically like a
-                    butterfly following flowers.
-                  </div>
-                </div>
-              }
+              content="I follow the element during scroll"
               placement="right"
               arrow
-              zIndex={2000}
-              arrowClassName="jungle-arrow"
             >
-              <button className="demo-button">🌿 Jungle Scroll Test</button>
+              <button>Scroll test button</button>
             </Tooltip>
-
-            <p style={{ marginTop: '50px', color: '#f0fdf4' }}>
-              🌺 More jungle content here...
-            </p>
-
-            <Tooltip
-              className="jungle-tooltip"
-              content={
-                <div className="tooltip-content">
-                  <div className="tooltip-header">
-                    <span className="tooltip-icon">🔄</span>
-                    <span className="tooltip-title">Auto Flip</span>
-                  </div>
-                  <div className="tooltip-body">
-                    🌴 Bottom jungle tooltip that flips when needed!
-                  </div>
-                </div>
-              }
-              placement="bottom"
-              arrow
-              arrowClassName="jungle-arrow"
-              zIndex={2000}
-            >
-              <button className="demo-button">🥑 Bottom Avocado</button>
-            </Tooltip>
-
-            <p style={{ marginTop: '100px', color: '#f0fdf4' }}>
-              🦋 Keep exploring the jungle...
-            </p>
+            <div style={{ height: '200px', marginTop: '50px' }}>
+              <p>More content...</p>
+              <Tooltip
+                content="Bottom tooltip in scroll area"
+                placement="bottom"
+                arrow
+              >
+                <button>Bottom button</button>
+              </Tooltip>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <ShowCases />
-
-      <Animations />
-
-      <div className="test-section">
-        <h2 className="section-title">🚀 Final Jungle Experience</h2>
-        <p
-          style={{
-            color: '#f0fdf4',
-            textAlign: 'center',
-            marginBottom: '2rem',
-          }}
-        >
-          The ultimate jungle tooltip experience with amazing animations! 🦋
+      {/* Transition Tests */}
+      <section className="test-section">
+        <h2>Transition Tests</h2>
+        <p>
+          Testing different transition configurations with tailwind-style
+          animations
         </p>
-
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '30px',
-            flexWrap: 'wrap',
-          }}
-        >
-          <Tooltip
-            className="jungle-tooltip"
-            content={
-              <div className="tooltip-content">
-                <div className="tooltip-header">
-                  <span className="tooltip-icon">🎬</span>
-                  <span className="tooltip-title">Recording Ready</span>
-                </div>
-                <div className="tooltip-body">
-                  🎥 Perfect for recording demos with amazing zoom animations
-                  and jungle vibes!
-                </div>
-              </div>
-            }
-            placement="top"
-            arrow
-            arrowClassName="jungle-arrow"
-            zIndex={2000}
-          >
-            <button
-              className="demo-button"
-              style={{ padding: '15px 25px', fontSize: '16px' }}
-            >
-              🎬 Ready to Record!
-            </button>
+        <div className="transition-tests">
+          <Tooltip content="No transitions" transition={{ enable: false }}>
+            <button>No transition</button>
           </Tooltip>
-
           <Tooltip
-            className="jungle-tooltip"
-            content={
-              <div className="tooltip-content">
-                <div className="tooltip-header">
-                  <span className="tooltip-icon">✨</span>
-                  <span className="tooltip-title">Amazing UI</span>
-                </div>
-                <div className="tooltip-body">
-                  🌟 Jungle-themed UI with avocado elements and smooth
-                  animations - perfect for social media!
-                </div>
-              </div>
-            }
-            placement="bottom"
-            arrow
-            arrowClassName="jungle-arrow"
-            zIndex={2000}
+            content="Bounce in/out animation"
+            className="bounce-in-out"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
           >
-            <button
-              className="demo-button"
-              style={{ padding: '15px 25px', fontSize: '16px' }}
-            >
-              ✨ Amazing Animations!
-            </button>
+            <button>Bounce</button>
+          </Tooltip>
+          <Tooltip
+            content="Fade in/out down animation"
+            className="fade-in-out-down"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Fade Down</button>
+          </Tooltip>
+          <Tooltip
+            content="Flip X animation"
+            className="flip-in-out-x"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Flip X</button>
+          </Tooltip>
+          <Tooltip
+            content="Light speed animation"
+            className="light-speed-in-out"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Light Speed</button>
+          </Tooltip>
+          <Tooltip
+            content="Rotate in/out animation"
+            className="rotate-in-out"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Rotate</button>
+          </Tooltip>
+          <Tooltip
+            content="Zoom in/out animation"
+            className="zoom-in-out"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Zoom</button>
+          </Tooltip>
+          <Tooltip
+            content="Roll in/out animation"
+            className="roll-in-out"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Roll</button>
+          </Tooltip>
+          <Tooltip
+            content="Slide in/out animation"
+            className="slide-in-out"
+            transition={{ enable: true, enterDuration: 400, exitDuration: 400 }}
+          >
+            <button>Slide</button>
           </Tooltip>
         </div>
+      </section>
 
-        <div
-          style={{ textAlign: 'center', marginTop: '3rem', color: '#f0fdf4' }}
-        >
-          <p style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>
-            🎯 <strong>Perfect for Recording:</strong>
-          </p>
-          <p>• Auto-cycling avocado tooltips with mega zoom effects</p>
-          <p>• Jungle background with animated elements</p>
-          <p>• Professional tooltip styling with shimmer effects</p>
-          <p>• Play/pause controls for perfect timing</p>
-          <p>• Click individual avocados to focus on specific tooltips</p>
+      {/* Timeout/Delay Tests */}
+      <section className="test-section">
+        <h2>Timeout & Delay Tests</h2>
+        <p>Testing open and close delays for tooltips</p>
+        <div className="timeout-tests">
+          <Tooltip content="Opens immediately" openDelay={0} closeDelay={0}>
+            <button>No delays</button>
+          </Tooltip>
+          <Tooltip
+            content="Opens after 500ms delay"
+            openDelay={500}
+            closeDelay={0}
+          >
+            <button>Open delay 500ms</button>
+          </Tooltip>
+          <Tooltip
+            content="Closes after 1s delay"
+            openDelay={0}
+            closeDelay={1000}
+          >
+            <button>Close delay 1s</button>
+          </Tooltip>
+          <Tooltip
+            content="Opens after 300ms, closes after 800ms"
+            openDelay={300}
+            closeDelay={800}
+          >
+            <button>Both delays</button>
+          </Tooltip>
+          <Tooltip
+            content="Long delays: open 1s, close 1.5s"
+            openDelay={1000}
+            closeDelay={1500}
+          >
+            <button>Long delays</button>
+          </Tooltip>
         </div>
+      </section>
+
+      {/* Controlled State Test */}
+      <section className="test-section">
+        <h2>Controlled State Test</h2>
+        <p>Testing controlled open/close behavior</p>
+        <ControlledTooltipTest />
+      </section>
+    </div>
+  );
+}
+
+function ControlledTooltipTest() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <div className="controlled-test">
+      <div className="controlled-target">
+        <Tooltip
+          content="This tooltip is controlled programmatically"
+          open={isOpen}
+          arrow
+          className="bounce-in-out"
+        >
+          <button>Controlled tooltip trigger</button>
+        </Tooltip>
       </div>
+      <button className="toggle-button" onClick={() => setIsOpen(!isOpen)}>
+        <span className="toggle-icon">{isOpen ? '👁️' : '👁️‍🗨️'}</span>
+        Toggle tooltip ({isOpen ? 'open' : 'closed'})
+      </button>
     </div>
   );
 }

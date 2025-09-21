@@ -1,0 +1,16 @@
+.tooltip-trigger {
+  font-size: 3rem;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 5;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.headless-tooltip-arrow.tooltip-arrow {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border: 1px solid #4338ca;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.4);
+}

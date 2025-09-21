@@ -1,0 +1,803 @@
+/* JSX Content Section Styles */
+.jsx-content-section {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+  background-size: 400% 400%;
+  animation: gradientWave 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.jsx-content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(99, 102, 241, 0.1) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(236, 72, 153, 0.1) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(34, 197, 94, 0.05) 0%,
+      transparent 50%
+    );
+  animation: particleDance 20s ease-in-out infinite alternate;
+}
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes particleDance {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.jsx-background {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.jsx-content {
+  position: relative;
+}
+
+.jsx-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #f5576c 75%,
+    #4facfe 100%
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    rainbowShift 8s ease-in-out infinite,
+    titleFloat 4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 4px 20px rgba(102, 126, 234, 0.3));
+  letter-spacing: -0.02em;
+}
+
+.jsx-subtitle {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  opacity: 0;
+  animation: slideInUp 1s ease-out 0.3s forwards;
+  text-align: center;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+@keyframes rainbowShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes titleFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Demo Area */
+.jsx-demo-area {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 4rem 0;
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(99, 102, 241, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(236, 72, 153, 0.1) 0%,
+      transparent 50%
+    ),
+    rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.jsx-demo-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  animation: scanLine 4s linear infinite;
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.jsx-trigger-wrapper {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.5) rotate(180deg);
+  animation: triggerAppear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  z-index: 100;
+}
+
+.jsx-trigger {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  animation: breathe 4s ease-in-out infinite;
+  box-shadow:
+    0 10px 30px rgba(102, 126, 234, 0.25),
+    0 0 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.jsx-trigger:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow:
+    0 20px 40px rgba(102, 126, 234, 0.5),
+    0 0 40px rgba(240, 147, 251, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.jsx-trigger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.jsx-trigger:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+.jsx-emoji {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes triggerAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 25px rgba(102, 126, 234, 0.3),
+      0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 8px 25px rgba(102, 126, 234, 0.5),
+      0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+
+/* JSX Tooltip Styles */
+.jsx-tooltip {
+  min-width: 280px;
+  max-width: 350px;
+  background: linear-gradient(145deg, #1e1b4b, #312e81);
+  border-radius: 16px;
+  border: 2px solid #4338ca;
+  box-shadow:
+    0 25px 50px rgba(67, 56, 202, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  position: relative;
+  animation: tooltipPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10000;
+}
+
+.jsx-tooltip-container {
+  z-index: 10000 !important;
+}
+
+.jsx-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: tooltipShimmer 2s infinite;
+}
+
+@keyframes tooltipPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes tooltipShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Chart Tooltip */
+.chart-tooltip h3 {
+  color: #10b981;
+  margin: 0 0 1rem 0;
+  padding: 1rem 1rem 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-container {
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
+  height: 80px;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-bar {
+  flex: 1;
+  border-radius: 4px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.chart-bar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.growth {
+  color: #10b981;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 1rem 1rem;
+}
+
+/* Profile Card */
+.profile-card {
+  padding: 1.5rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #4338ca;
+}
+
+.profile-header h4 {
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.badge {
+  background: linear-gradient(45deg, #f59e0b, #f97316);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat strong {
+  display: block;
+  color: #4338ca;
+  font-size: 1.2rem;
+}
+
+.stat span {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+.profile-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #4338ca, #6366f1);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(67, 56, 202, 0.4);
+}
+
+/* Form Tooltip */
+.form-tooltip {
+  padding: 1.5rem;
+}
+
+.form-tooltip h3 {
+  color: #3b82f6;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.contact-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form button {
+  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Interactive Tooltip */
+.interactive-tooltip {
+  padding: 1.5rem;
+}
+
+.like-section h4 {
+  color: #ec4899;
+  margin: 0 0 1rem 0;
+}
+
+.like-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.like-btn {
+  background: linear-gradient(45deg, #ec4899, #be185d);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.like-btn:hover {
+  transform: scale(1.05);
+}
+
+.social-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-buttons button {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.social-buttons button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Rating Tooltip */
+.rating-tooltip {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.rating-tooltip h3 {
+  color: #f59e0b;
+  margin: 0 0 1rem 0;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.3;
+}
+
+.star.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.star:hover {
+  transform: scale(1.3);
+}
+
+.rating-text {
+  color: #cbd5e1;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.submit-rating {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-rating:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* Shopping Cart */
+.shopping-cart {
+  padding: 1.5rem;
+}
+
+.shopping-cart h3 {
+  color: #10b981;
+  margin: 0 0 1rem 0;
+}
+
+.cart-items {
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  color: #cbd5e1;
+}
+
+.price {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.cart-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 1rem 0;
+}
+
+.cart-total {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Todo Tooltip */
+.todo-tooltip {
+  padding: 1.5rem;
+}
+
+.todo-tooltip h3 {
+  color: #8b5cf6;
+  margin: 0 0 1rem 0;
+}
+
+.todo-list {
+  margin-bottom: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  color: #cbd5e1;
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.todo-item input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #8b5cf6;
+}
+
+.add-task {
+  width: 100%;
+  background: rgba(139, 92, 246, 0.2);
+  border: 2px dashed #8b5cf6;
+  color: #8b5cf6;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-task:hover {
+  background: rgba(139, 92, 246, 0.3);
+  border-style: solid;
+}
+
+/* Color Palette */
+.palette-tooltip {
+  padding: 1.5rem;
+}
+
+.palette-tooltip h3 {
+  color: #ec4899;
+  margin: 0 0 1rem 0;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+  border-color: white;
+}
+
+.color-info {
+  text-align: left;
+}
+
+.color-info strong {
+  color: #3b82f6;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.color-info p {
+  color: #cbd5e1;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .jsx-title {
+    font-size: 3rem;
+  }
+
+  .jsx-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .jsx-demo-area {
+    height: 400px;
+  }
+
+  .jsx-trigger {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .jsx-tooltip {
+    min-width: 250px;
+    max-width: 280px;
+  }
+}

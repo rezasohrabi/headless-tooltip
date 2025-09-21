@@ -1,0 +1,217 @@
+.bounce-in-out[data-enter] {
+  opacity: 0;
+}
+
+.bounce-in-out[data-entering] {
+  opacity: 1;
+  animation: bounceIn;
+  animation-duration: 400ms !important;
+}
+
+.bounce-in-out[data-exiting] {
+  animation: bounceOut;
+  animation-duration: 400ms !important;
+}
+
+/* Back In Out */
+
+.back-in-out[data-enter] {
+  opacity: 0;
+}
+
+.back-in-out[data-entering] {
+  opacity: 1;
+  animation: backInDown;
+  animation-duration: 400ms !important;
+}
+
+.back-in-out[data-exiting] {
+  animation: backOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* Fade In  Out Down */
+
+.fade-in-out-down[data-enter] {
+  opacity: 0;
+}
+
+.fade-in-out-down[data-entering] {
+  opacity: 1;
+  animation: fadeInDown;
+  animation-duration: 400ms !important;
+}
+
+.fade-in-out-down[data-exiting] {
+  animation: fadeOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* Fade In Out Bottom Left */
+
+.fade-in-out-bottom-left[data-enter] {
+  opacity: 0;
+}
+
+.fade-in-out-bottom-left[data-entering] {
+  opacity: 1;
+  animation: fadeInBottomRight;
+  animation-duration: 400ms !important;
+}
+
+.fade-in-out-bottom-left[data-exiting] {
+  animation: fadeOutBottomLeft;
+  animation-duration: 400ms !important;
+}
+
+/* Flip */
+
+.flip-in-out[data-enter] {
+  opacity: 0;
+}
+
+.flip-in-out[data-entering] {
+  opacity: 1;
+  animation: flip;
+  animation-duration: 400ms !important;
+}
+
+.flip-in-out[data-exiting] {
+  animation: flip;
+  animation-duration: 400ms !important;
+}
+/* flip in out x */
+
+.flip-in-out-x[data-enter] {
+  opacity: 0;
+}
+
+.flip-in-out-x[data-entering] {
+  opacity: 1;
+  animation: flipInX;
+  animation-duration: 400ms !important;
+}
+
+.flip-in-out-x[data-exiting] {
+  animation: flipOutX;
+  animation-duration: 400ms !important;
+}
+
+/*light speed in out */
+
+.light-speed-in-out[data-enter] {
+  opacity: 0;
+}
+
+.light-speed-in-out[data-entering] {
+  opacity: 1;
+  animation: lightSpeedInLeft;
+  animation-duration: 400ms !important;
+}
+
+.light-speed-in-out[data-exiting] {
+  animation: lightSpeedOutRight;
+  animation-duration: 400ms !important;
+}
+
+/* rotate in out */
+
+.rotate-in-out[data-enter] {
+  opacity: 0;
+}
+
+.rotate-in-out[data-entering] {
+  opacity: 1;
+  animation: rotateIn;
+  animation-duration: 400ms !important;
+}
+
+.rotate-in-out[data-exiting] {
+  animation: rotateOut;
+  animation-duration: 400ms !important;
+}
+
+/* hinge in out */
+
+.hinge-in-out[data-enter] {
+  opacity: 0;
+}
+
+.hinge-in-out[data-entering] {
+  opacity: 1;
+  animation: jackInTheBox;
+  animation-duration: 400ms !important;
+}
+
+.hinge-in-out[data-exiting] {
+  animation: hinge;
+  animation-duration: 400ms !important;
+}
+
+/* roll in out */
+
+.roll-in-out[data-enter] {
+  opacity: 0;
+}
+
+.roll-in-out[data-entering] {
+  opacity: 1;
+  animation: rollIn;
+  animation-duration: 400ms !important;
+}
+
+.roll-in-out[data-exiting] {
+  animation: rollOut;
+  animation-duration: 400ms !important;
+}
+
+/* zoom in out */
+
+.zoom-in-out[data-enter] {
+  opacity: 0;
+}
+
+.zoom-in-out[data-entering] {
+  opacity: 1;
+  animation: zoomIn;
+  animation-duration: 400ms !important;
+}
+
+.zoom-in-out[data-exiting] {
+  animation: zoomOut;
+  animation-duration: 400ms !important;
+}
+
+/* zoom in out down */
+
+.zoom-in-out-down[data-enter] {
+  opacity: 0;
+}
+
+.zoom-in-out-down[data-entering] {
+  opacity: 1;
+  animation: zoomInDown;
+  animation-duration: 400ms !important;
+}
+
+.zoom-in-out-down[data-exiting] {
+  animation: zoomOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* slide in out */
+
+.slide-in-out[data-enter] {
+  opacity: 0;
+}
+
+.slide-in-out[data-entering] {
+  opacity: 1;
+  animation: slideInUp;
+  animation-duration: 400ms !important;
+}
+
+.slide-in-out[data-exiting] {
+  animation: slideOutDown;
+  animation-duration: 400ms !important;
+}

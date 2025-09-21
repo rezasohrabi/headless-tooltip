@@ -57,5 +57,6 @@ export default tseslint.config({
     '**/storybook-static/**',
     '**/dist/**',
     '**/docs/**',
+    '**/website/**',
   ],
 });
