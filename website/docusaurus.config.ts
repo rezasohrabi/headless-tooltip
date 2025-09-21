@@ -15,14 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://headless-tooltip.github.io',
+  url: 'https://rezasohrabi.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/headless-tooltip/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Headless-Tooltip', // Usually your GitHub org/user name.
+  organizationName: 'rezasohrabi', // Usually your GitHub org/user name.
   projectName: 'headless-tooltip', // Usually your repo name.
 
   trailingSlash: false,
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/Headless-Tooltip/headless-tooltip/tree/main/website/',
+            'https://github.com/rezasohrabi/headless-tooltip/tree/main/website/',
         },
         blog: false,
         theme: {
@@ -84,7 +84,7 @@ const config: Config = {
           label: 'Tutorial',
         },
         {
-          href: 'https://github.com/Headless-Tooltip/headless-tooltip',
+          href: 'https://github.com/rezasohrabi/headless-tooltip',
           label: 'GitHub',
           position: 'right',
         },
@@ -124,7 +124,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/Headless-Tooltip/headless-tooltip',
+              href: 'https://github.com/rezasohrabi/headless-tooltip',
             },
           ],
         },
