@@ -25,6 +25,8 @@ const config: Config = {
   organizationName: 'Headless-Tooltip', // Usually your GitHub org/user name.
   projectName: 'headless-tooltip', // Usually your repo name.
 
+  trailingSlash: false,
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -40,12 +42,6 @@ const config: Config = {
     [
       'classic',
       {
-        gtag: {
-          trackingID: 'G-722BJTW24P',
-          anonymizeIP: false,
-        },
-      },
-      {
         docs: {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
@@ -58,6 +54,16 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-722BJTW24P',
+        anonymizeIP: false,
+      },
     ],
   ],
 

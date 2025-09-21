@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import 'animate.css';
 import './animations.css';
 import DemoSection from '../components/landing/demo-section/DemoSection';
@@ -9,10 +10,16 @@ import QuotesSection from '../components/landing/quotes-section/QuotesSection';
 export default function Home() {
   return (
     <>
-      <DemoSection />
-      <LibrariesSection />
-      <JSXContentSection />
-      <QuotesSection />
+      <BrowserOnly fallback={<div>Loading...</div>}>
+        {() => (
+          <>
+            <DemoSection />
+            <LibrariesSection />
+            <JSXContentSection />
+            <QuotesSection />
+          </>
+        )}
+      </BrowserOnly>
     </>
   );
 }
