@@ -15,18 +15,26 @@ jobs:
       run:
         working-directory: ./website
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # Install pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      # Set up Node
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: npm
+          node-version: '20'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm ci
       - name: Build website
-        run: npm run build
+        run: pnpm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
