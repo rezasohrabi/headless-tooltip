@@ -721,3 +721,311 @@ button:focus {
   background: #111827 !important;
   border-color: #374151 !important;
 }
+
+/* Advanced Nested Tooltip Styles */
+.advanced-nested-test {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.scenario {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.scenario h4 {
+  margin: 0 0 1rem 0;
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Scenario 1: Menu Styles */
+.menu-trigger {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  color: white !important;
+  border: 2px solid #065f46 !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.menu-trigger:hover {
+  background: linear-gradient(135deg, #047857, #065f46) !important;
+  transform: translateY(-1px) !important;
+}
+
+.menu-tooltip {
+  background: #ffffff !important;
+  color: #374151 !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 10px;
+  min-width: 180px;
+  overflow: hidden;
+}
+
+.menu-header {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu-items {
+  padding: 8px 0;
+}
+
+.menu-item {
+  width: 100% !important;
+  text-align: left !important;
+  padding: 10px 16px !important;
+  background: transparent !important;
+  color: #374151 !important;
+  border: none !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.menu-item:hover {
+  background: #f3f4f6 !important;
+  color: #1f2937 !important;
+  transform: none !important;
+}
+
+/* Scenario 2: Notification Styles */
+.notification-trigger {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  color: white !important;
+  border: 2px solid #991b1b !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.notification-trigger:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b) !important;
+  transform: translateY(-1px) !important;
+}
+
+.notification-tooltip {
+  background: #ffffff !important;
+  color: #374151 !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 15px 35px -5px rgba(0, 0, 0, 0.15),
+    0 5px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #e5e7eb !important;
+  max-width: 300px !important;
+}
+
+.notification-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.notification-header {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.notification-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.notification-header h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.notification-body {
+  padding: 16px;
+}
+
+.notification-body p {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #374151;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.notification-btn {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 6px !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.notification-btn.primary {
+  background: #10b981 !important;
+  color: white !important;
+  border-color: #059669 !important;
+}
+
+.notification-btn.primary:hover {
+  background: #059669 !important;
+  transform: translateY(-1px) !important;
+}
+
+.notification-btn.secondary {
+  background: #f3f4f6 !important;
+  color: #6b7280 !important;
+  border-color: #d1d5db !important;
+}
+
+.notification-btn.secondary:hover {
+  background: #e5e7eb !important;
+  color: #374151 !important;
+  transform: translateY(-1px) !important;
+}
+
+.notification-btn.danger {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+  border-color: #fecaca !important;
+}
+
+.notification-btn.danger:hover {
+  background: #fecaca !important;
+  color: #b91c1c !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Scenario 3: Toolbar Styles */
+.toolbar-trigger {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: white !important;
+  border: 2px solid #6d28d9 !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.toolbar-trigger:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+  transform: translateY(-1px) !important;
+}
+
+.toolbar-tooltip {
+  background: #ffffff !important;
+  color: #374151 !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 12px 28px -5px rgba(0, 0, 0, 0.12),
+    0 4px 10px -2px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.toolbar-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 200px;
+}
+
+.toolbar-header h4 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+.toolbar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tool-btn {
+  width: 44px !important;
+  height: 44px !important;
+  background: #f9fafb !important;
+  color: #6b7280 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tool-btn:hover {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  border-color: #d1d5db !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Small nested tooltip variant */
+.nested-tooltip.small {
+  font-size: 11px !important;
+  padding: 4px 8px !important;
+  max-width: 120px !important;
+}

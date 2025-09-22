@@ -279,6 +279,126 @@ export function Test() {
         </div>
       </section>
 
+      {/* Advanced Nested Tooltip Test */}
+      <section className="test-section">
+        <h2>Advanced Nested Tooltip Test</h2>
+        <p>Multiple variations of nested tooltip scenarios</p>
+        <div className="advanced-nested-test">
+          {/* Scenario 1: Menu with sub-tooltips */}
+          <div className="scenario">
+            <h4>Scenario 1: Action Menu</h4>
+            <Tooltip
+              content={<div>this is parent tooltip</div>}
+              placement="right"
+              arrow
+              disableInteractive={false}
+              openDelay={150}
+              closeDelay={300}
+              className="menu-tooltip"
+            >
+              <div className="menu-card">
+                <div className="menu-header">
+                  <span>⚙️</span>
+                  <h4>Quick Actions</h4>
+                </div>
+                <div className="menu-items">
+                  <Tooltip
+                    content="Save your current work"
+                    placement="right"
+                    className="nested-tooltip"
+                    openDelay={100}
+                  >
+                    <button className="menu-item">💾 Save</button>
+                  </Tooltip>
+                  <Tooltip
+                    content="Export data to CSV file"
+                    placement="right"
+                    className="nested-tooltip"
+                    openDelay={100}
+                  >
+                    <button className="menu-item">📊 Export</button>
+                  </Tooltip>
+                  <Tooltip
+                    content="Print current document"
+                    placement="right"
+                    className="nested-tooltip"
+                    openDelay={100}
+                  >
+                    <button className="menu-item">🖨️ Print</button>
+                  </Tooltip>
+                  <Tooltip
+                    content="Share with team members"
+                    placement="right"
+                    className="nested-tooltip"
+                    openDelay={100}
+                  >
+                    <button className="menu-item">🔗 Share</button>
+                  </Tooltip>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+
+          {/* Scenario 2: Notification with interactive elements */}
+          <div className="scenario">
+            <h4>Scenario 2: Interactive Notification</h4>
+            <Tooltip
+              content={<div>this is parent tooltip</div>}
+              placement="bottom"
+              arrow
+              arrowSize={14}
+              disableInteractive={false}
+              openDelay={100}
+              closeDelay={400}
+              className="notification-tooltip"
+            >
+              <div className="notification-card">
+                <div className="notification-header">
+                  <span className="notification-icon">🔔</span>
+                  <div>
+                    <h4>New Message</h4>
+                    <span className="notification-time">2 minutes ago</span>
+                  </div>
+                </div>
+                <div className="notification-body">
+                  <p>Sarah Johnson sent you a project update</p>
+                  <div className="notification-actions">
+                    <Tooltip
+                      content="Mark as read"
+                      placement="top"
+                      className="nested-tooltip small"
+                    >
+                      <button className="notification-btn primary">✓</button>
+                    </Tooltip>
+                    <Tooltip
+                      content="Reply to message"
+                      placement="top"
+                      className="nested-tooltip small"
+                    >
+                      <button className="notification-btn secondary">↩️</button>
+                    </Tooltip>
+                    <Tooltip
+                      content="Archive notification"
+                      placement="top"
+                      className="nested-tooltip small"
+                    >
+                      <button className="notification-btn secondary">📁</button>
+                    </Tooltip>
+                    <Tooltip
+                      content="Delete notification"
+                      placement="top"
+                      className="nested-tooltip small"
+                    >
+                      <button className="notification-btn danger">🗑️</button>
+                    </Tooltip>
+                  </div>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+        </div>
+      </section>
+
       {/* Controlled State Test */}
       <section className="test-section">
         <h2>Controlled State Test</h2>
