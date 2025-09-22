@@ -204,6 +204,81 @@ export function Test() {
         </div>
       </section>
 
+      {/* Nested Tooltip Test */}
+      <section className="test-section">
+        <h2>Nested Tooltip Test</h2>
+        <p>
+          Testing tooltip containing a card with a button that has its own
+          tooltip
+        </p>
+        <div className="nested-tooltip-test">
+          <Tooltip
+            content={
+              <div className="tooltip-card">
+                <div className="card-header">
+                  <h3>User Profile Card</h3>
+                  <span className="card-subtitle">
+                    Interactive tooltip content
+                  </span>
+                </div>
+                <div className="card-body">
+                  <div className="user-info">
+                    <div className="avatar">👤</div>
+                    <div className="user-details">
+                      <p>
+                        <strong>John Doe</strong>
+                      </p>
+                      <p>Software Developer</p>
+                      <p>john.doe@example.com</p>
+                    </div>
+                  </div>
+                  <div className="card-actions">
+                    <Tooltip
+                      content="Send a message to John"
+                      placement="top"
+                      className="nested-tooltip"
+                    >
+                      <button className="action-button primary">
+                        💬 Message
+                      </button>
+                    </Tooltip>
+                    <Tooltip
+                      content="View John's full profile"
+                      placement="top"
+                      className="nested-tooltip"
+                    >
+                      <button className="action-button secondary">
+                        👁️ View Profile
+                      </button>
+                    </Tooltip>
+                    <Tooltip
+                      content="Add John to your connections"
+                      placement="top"
+                      className="nested-tooltip"
+                    >
+                      <button className="action-button secondary">
+                        ➕ Connect
+                      </button>
+                    </Tooltip>
+                  </div>
+                </div>
+              </div>
+            }
+            placement="bottom"
+            arrow
+            arrowSize={16}
+            disableInteractive={false}
+            openDelay={200}
+            closeDelay={500}
+            className="parent-tooltip"
+          >
+            <button className="trigger-button">
+              🃏 Show Profile Card (with nested tooltips)
+            </button>
+          </Tooltip>
+        </div>
+      </section>
+
       {/* Controlled State Test */}
       <section className="test-section">
         <h2>Controlled State Test</h2>
