@@ -7,9 +7,9 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/headless-tooltip.d.ts",
       "import": "./dist/headless-tooltip.mjs",
-      "require": "./dist/headless-tooltip.cjs",
-      "types": "./dist/headless-tooltip.d.ts"
+      "require": "./dist/headless-tooltip.cjs"
     }
   },
   "sideEffects": false,
