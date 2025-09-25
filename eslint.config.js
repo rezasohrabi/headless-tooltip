@@ -58,5 +58,6 @@ export default tseslint.config({
     '**/dist/**',
     '**/docs/**',
     '**/website/**',
+    '**/examples/**',
   ],
 });

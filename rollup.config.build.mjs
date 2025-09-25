@@ -16,12 +16,12 @@ export default [
     input: 'src/index.tsx',
     output: [
       {
-        file: pkg.main,
+        file: 'dist/headless-tooltip.cjs',
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: pkg.module,
+        file: 'dist/headless-tooltip.mjs',
         format: 'esm',
         sourcemap: true,
       },
