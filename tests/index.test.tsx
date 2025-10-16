@@ -900,35 +900,35 @@ describe('Tooltip', () => {
     expect(screen.getByText('Tooltip content')).toBeInTheDocument();
   });
 
-  // test('handles nested tooltip scenarios', () => {
-  //   render(
-  //     <Tooltip content="Outer tooltip">
-  //       <button>
-  //         Outer
-  //         <Tooltip content="Inner tooltip">
-  //           <span> (Inner)</span>
-  //         </Tooltip>
-  //       </button>
-  //     </Tooltip>,
-  //   );
+  test('handles nested tooltip scenarios', () => {
+    render(
+      <Tooltip content="Outer tooltip">
+        <button>
+          Outer
+          <Tooltip content="Inner tooltip">
+            <span> (Inner)</span>
+          </Tooltip>
+        </button>
+      </Tooltip>,
+    );
 
-  //   // Test outer tooltip
-  //   fireEvent.mouseOver(screen.getByText('Outer', { exact: false }));
-  //   act(() => {
-  //     vi.advanceTimersByTime(300);
-  //   });
-  //   expect(screen.getByText('Outer tooltip')).toBeInTheDocument();
+    // Test outer tooltip
+    fireEvent.mouseOver(screen.getByText('Outer', { exact: false }));
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
+    expect(screen.getByText('Outer tooltip')).toBeInTheDocument();
 
-  //   // Test inner tooltip - we need to directly target the inner span
-  //   fireEvent.mouseOver(screen.getByText(' (Inner)'));
-  //   act(() => {
-  //     vi.advanceTimersByTime(300);
-  //   });
+    // Test inner tooltip - we need to directly target the inner span
+    fireEvent.mouseOver(screen.getByText('(Inner)'));
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
 
-  //   // Both tooltips should be visible
-  //   expect(screen.getByText('Outer tooltip')).toBeInTheDocument();
-  //   expect(screen.getByText('Inner tooltip')).toBeInTheDocument();
-  // });
+    // Both tooltips should be visible
+    expect(screen.getByText('Outer tooltip')).toBeInTheDocument();
+    expect(screen.getByText('Inner tooltip')).toBeInTheDocument();
+  });
 
   test('handles very large content gracefully', () => {
     const mockResizeObserver = vi.fn();
