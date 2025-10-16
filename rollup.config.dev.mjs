@@ -8,6 +8,7 @@ import serve from 'rollup-plugin-serve';
 import replace from '@rollup/plugin-replace';
 import livereload from 'rollup-plugin-livereload';
 import html from '@rollup/plugin-html';
+import { preserveUseClient } from './plugins.mjs';
 
 export default [
   {
@@ -60,6 +61,7 @@ export default [
           </body>
         </html>`,
       }),
+      preserveUseClient(),
       serve({
         open: true,
         contentBase: ['dev-dist', '.'],
