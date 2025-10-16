@@ -1,10 +1,17 @@
 {
   "name": "headless-tooltip",
-  "version": "1.1.7",
+  "version": "1.1.8-beta.1",
   "description": "Headless UI Component for building powerful React Tooltips!",
-  "main": "dist/headless-tooltip.cjs",
+  "main": "dist/headless-tooltip.mjs",
   "module": "dist/headless-tooltip.mjs",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/headless-tooltip.d.ts",
+      "import": "./dist/headless-tooltip.mjs",
+      "require": "./dist/headless-tooltip.cjs"
+    }
+  },
   "sideEffects": false,
   "files": [
     "dist"
