@@ -53,7 +53,7 @@ pnpm add headless-tooltip
 ## Basic Usage
 
 ```jsx
-import Tooltip from 'headless-tooltip';
+import { Tooltip } from 'headless-tooltip';
 
 function Example() {
   return (
@@ -67,7 +67,7 @@ function Example() {
 ## Styled Example
 
 ```jsx
-import Tooltip from 'headless-tooltip';
+import { Tooltip } from 'headless-tooltip';
 
 function StyledExample() {
   return (
@@ -154,7 +154,7 @@ The component is compatible with all modern browsers:
 
 ```jsx
 import { useState } from 'react';
-import Tooltip from 'headless-tooltip';
+import { Tooltip } from 'headless-tooltip';
 
 function ControlledExample() {
   const [isOpen, setIsOpen] = useState(false);
@@ -178,7 +178,7 @@ function ControlledExample() {
 ### Interactive Tooltip
 
 ```jsx
-import Tooltip from 'headless-tooltip';
+import { Tooltip } from 'headless-tooltip';
 
 function InteractiveExample() {
   return (
@@ -200,7 +200,7 @@ function InteractiveExample() {
 ### Animation Example
 
 ```jsx
-import Tooltip from 'headless-tooltip';
+import { Tooltip } from 'headless-tooltip';
 import './animations.css';
 
 function ZoomTooltip() {
