@@ -15,7 +15,7 @@ body:
       description: Version of headless-tooltip (or output of `npm ls headless-tooltip`).
       placeholder: e.g., 1.2.3
     validations:
-      required: true
+      required: false
 
   - type: input
     id: environment
@@ -43,7 +43,7 @@ body:
         3. Scroll down to '...'
         4. See error '...'
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected
@@ -51,7 +51,7 @@ body:
       label: Expected behavior
       description: What you expected to happen instead.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: logs
@@ -74,6 +74,6 @@ body:
         - label: I have searched existing issues and discussions.
           required: true
         - label: I have read the documentation.
-          required: true
+          required: false
         - label: I can reproduce this with a minimal reproduction.
-          required: true
+          required: false

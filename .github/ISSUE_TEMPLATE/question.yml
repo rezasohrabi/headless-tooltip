@@ -37,4 +37,4 @@ body:
         - label: I have searched existing issues and discussions.
           required: true
         - label: I have read the documentation.
-          required: true
+          required: false
