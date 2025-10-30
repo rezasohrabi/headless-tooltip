@@ -1,0 +1,79 @@
+name: Bug report
+description: Report a reproducible problem or regression
+title: '[Bug]: '
+labels: [bug, needs triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug! Please fill out the details below.
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: Version of headless-tooltip (or output of `npm ls headless-tooltip`).
+      placeholder: e.g., 1.2.3
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Node, package manager, React, browser.
+      placeholder: 'Windows 10; Node 20; pnpm 9; React 18/19; Chrome 129'
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clear and concise description of the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Link to a minimal reproduction (CodeSandbox/StackBlitz/repo) and exact steps.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error '...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and stack traces
+      description: Console output or stack traces if applicable.
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots/GIFs
+      description: If applicable, add screenshots to help explain your problem.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and discussions.
+          required: true
+        - label: I have read the documentation.
+          required: true
+        - label: I can reproduce this with a minimal reproduction.
+          required: true

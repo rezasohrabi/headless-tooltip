@@ -1,0 +1,40 @@
+name: Question
+description: Ask a question about usage, configuration, or behavior
+title: '[Question]: '
+labels: [question, needs triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask your question here. If this is about an unexpected behavior, consider filing a bug instead.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Be as specific as possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Relevant code snippet
+      description: Include minimal code to illustrate the question.
+      render: tsx
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What are you trying to achieve? Any constraints?
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and discussions.
+          required: true
+        - label: I have read the documentation.
+          required: true
