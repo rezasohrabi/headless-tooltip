@@ -22,7 +22,7 @@
     "@types/react-transition-group": "^4.4.12",
     "animate.css": "^4.1.1",
     "clsx": "^2.0.0",
-    "headless-tooltip": "^1.1.6",
+    "headless-tooltip": "^1.1.8",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

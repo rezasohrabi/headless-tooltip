@@ -27,8 +27,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.1.1
   headless-tooltip:
-    specifier: ^1.1.6
-    version: 1.1.6(@types/react-dom@19.1.9)(@types/react@19.1.12)(react-dom@19.1.1)(react@19.1.1)
+    specifier: ^1.1.8
+    version: 1.1.8(@types/react-dom@19.1.9)(@types/react@19.1.12)(react-dom@19.1.1)(react@19.1.1)
   prism-react-renderer:
     specifier: ^2.3.0
     version: 2.4.1(react@19.1.1)
@@ -5692,8 +5692,8 @@ packages:
     hasBin: true
     dev: false
 
-  /headless-tooltip@1.1.6(@types/react-dom@19.1.9)(@types/react@19.1.12)(react-dom@19.1.1)(react@19.1.1):
-    resolution: {integrity: sha512-MK/k47zi/Z/guOJSMlXzPDEJgJ1ZrhNk4l2K72/uwACNaWr6020/3qsZa0MYSQDuojBKO8OEflfMjRORm0Vx6Q==}
+  /headless-tooltip@1.1.8(@types/react-dom@19.1.9)(@types/react@19.1.12)(react-dom@19.1.1)(react@19.1.1):
+    resolution: {integrity: sha512-jjdyvMl2ynly5G9aqCec4dcpG8K5HHPELhj2ilrbmtfKWirNLXGqAZ4qrgyTnVWTdBD65wTkv51OkNw0MC90pg==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
       '@types/react-dom': ^17.0.0 || ^18.0.0 || ^19.0.0
