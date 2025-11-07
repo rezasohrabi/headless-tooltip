@@ -12,7 +12,12 @@ import React, {
 } from 'react';
 
 import ReactUniPopper from 'react-uni-popper';
-import { useTransition, useOnEscape, useEnhancedChildren } from '../hooks';
+import {
+  useTransition,
+  useOnEscape,
+  useEnhancedChildren,
+  useClient,
+} from '../hooks';
 import { getId, getReactElementRef } from '../utils';
 import { TimeoutRef, TooltipProps } from '../types';
 import { Arrow } from './Arrow';
@@ -189,6 +194,12 @@ export function Tooltip({
   );
 
   const Trigger = cloneElement(childrenElement, childrenProps);
+
+  const { isClient } = useClient();
+
+  if (!isClient) {
+    return <>{childrenElement}</>;
+  }
 
   return (
     <>
