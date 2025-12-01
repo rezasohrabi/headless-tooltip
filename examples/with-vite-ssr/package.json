@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "compression": "^1.8.1",
-    "express": "^5.1.0",
+    "express": "^5.2.0",
     "headless-tooltip": "1.1.8-beta.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
