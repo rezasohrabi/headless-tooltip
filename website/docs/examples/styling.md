@@ -5,6 +5,8 @@ description: Complete guide to styling tooltips with CSS frameworks and librarie
 keywords: [tooltip styling, css tooltip, tailwind tooltip, styled components]
 ---
 
+import LiveCodeEditor from '@site/src/components/LiveCodeEditor';
+
 # Styling Guide
 
 Headless Tooltip gives you complete control over styling. Here's how to style tooltips with different approaches.
@@ -359,9 +361,3 @@ function ThemedTooltips() {
 5. **Responsive**: Test on different screen sizes
 6. **Dark Mode**: Consider dark mode styling
 7. **Accessibility**: Maintain good color contrast (WCAG AA or AAA)
-
-## Next Steps
-
-- [Animations Guide](./animations.md) - Add beautiful animations
-- [Animation Examples](./animations.md) - Add animations to tooltips
-- [API Reference](../api/tooltip.md) - Full API documentation

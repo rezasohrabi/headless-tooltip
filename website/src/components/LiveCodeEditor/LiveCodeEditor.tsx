@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useRef, useEffect, useMemo, memo } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { themes } from 'prism-react-renderer';
 import Tooltip from 'headless-tooltip';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { TailwindLoader } from './TailwindLoader';
 import './LiveCodeEditor.css';
 
 interface LiveCodeEditorProps {
@@ -10,6 +11,26 @@ interface LiveCodeEditorProps {
   noInline?: boolean;
   scope?: Record<string, any>;
 }
+
+// Style component for CSS support
+const Style = ({ children }: { children: string }) => {
+  useEffect(() => {
+    const styleId = `live-editor-style-${Math.random().toString(36).substr(2, 9)}`;
+    const styleElement = document.createElement('style');
+    styleElement.id = styleId;
+    styleElement.textContent = children;
+    document.head.appendChild(styleElement);
+
+    return () => {
+      const existingStyle = document.getElementById(styleId);
+      if (existingStyle) {
+        existingStyle.remove();
+      }
+    };
+  }, [children]);
+
+  return null;
+};
 
 const LiveCodeEditor: React.FC<LiveCodeEditorProps> = ({
   code,
@@ -24,10 +45,18 @@ const LiveCodeEditor: React.FC<LiveCodeEditorProps> = ({
           theme={themes.nightOwl}
           noInline={noInline}
           scope={{
+            React,
+            useState,
+            useRef,
+            useEffect,
+            useMemo,
+            memo,
             Tooltip,
+            Style,
             ...scope,
           }}
         >
+          <TailwindLoader />
           <div className="live-code-editor">
             <div className="live-editor-container">
               <div className="live-editor-header">
@@ -40,7 +69,9 @@ const LiveCodeEditor: React.FC<LiveCodeEditorProps> = ({
                 <span className="live-preview-title">👁️ Preview</span>
               </div>
               <div className="live-preview-content">
-                <LivePreview />
+                <div id="live-preview-wrapper">
+                  <LivePreview />
+                </div>
               </div>
               <LiveError className="live-error" />
             </div>

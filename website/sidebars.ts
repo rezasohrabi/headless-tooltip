@@ -32,7 +32,6 @@ const sidebars: SidebarsConfig = {
         'examples/animations',
         'examples/custom-positioning',
         'examples/interactive',
-        'examples/performance',
         'examples/troubleshooting',
       ],
     },

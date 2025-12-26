@@ -5,6 +5,8 @@ description: Create tooltips with clickable content
 keywords: [interactive tooltip, clickable tooltip, tooltip with buttons]
 ---
 
+import LiveCodeEditor from '@site/src/components/LiveCodeEditor';
+
 # Interactive Tooltips
 
 Create tooltips that users can interact with.
@@ -128,8 +130,3 @@ function UserCardTooltip() {
   );
 }
 ```
-
-## Next Steps
-
-- [Custom Positioning](./custom-positioning.md)
-- [Performance Tips](./performance.md)

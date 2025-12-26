@@ -87,6 +87,7 @@ code={`function PositioningExample() {
 const placements = ['top', 'bottom', 'left', 'right'];
 
 return (
+
 <div style={{
       display: 'flex',
       gap: '1rem',
@@ -135,6 +136,7 @@ Control how tooltips are triggered:
 <LiveCodeEditor
 code={`function TriggerExample() {
 return (
+
 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
 <Tooltip
 content="Hover tooltip"
@@ -207,8 +209,3 @@ Hover me
 render(<TriggerExample />);`}
 noInline
 />
-
-## What's Next?
-
-- [API Reference](../api/tooltip.md) - Complete API documentation
-- [Examples](../examples/basic.md) - More advanced examples

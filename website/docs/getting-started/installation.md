@@ -50,8 +50,3 @@ This package has the following peer dependencies that should already be installe
 ## TypeScript Support
 
 Headless React Tooltip is written in TypeScript and includes comprehensive type definitions out of the box. No additional `@types` packages are needed.
-
-## Next Steps
-
-- [Basic Usage](./basic-usage.md) - Learn how to use tooltips
-- [API Reference](../api/tooltip.md) - Explore all available props and options

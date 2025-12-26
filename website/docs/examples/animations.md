@@ -5,6 +5,8 @@ description: Create beautiful tooltip animations with CSS
 keywords: [tooltip animations, css animations, animated tooltips]
 ---
 
+import LiveCodeEditor from '@site/src/components/LiveCodeEditor';
+
 # Animations
 
 Add beautiful animations to your tooltips with CSS transitions and keyframes.
@@ -479,9 +481,3 @@ Animate based on tooltip position:
   }
 }
 ```
-
-## Next Steps
-
-- [Styling Guide](./styling.md) - Learn more styling techniques
-- [Styling Guide](./styling.md) - Learn more styling techniques
-- [API Reference](../api/tooltip.md) - Full transition API

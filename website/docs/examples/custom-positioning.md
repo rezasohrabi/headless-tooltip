@@ -5,6 +5,8 @@ description: Advanced positioning techniques for complex layouts
 keywords: [tooltip positioning, custom placement, advanced positioning]
 ---
 
+import LiveCodeEditor from '@site/src/components/LiveCodeEditor';
+
 # Custom Positioning
 
 Learn advanced positioning techniques for complex use cases.
@@ -106,8 +108,3 @@ For scrollable containers:
   </Tooltip>
 </div>
 ```
-
-## Next Steps
-
-- [Interactive Tooltips](./interactive.md) - Make tooltips interactive
-- [Performance](./performance.md) - Optimization tips

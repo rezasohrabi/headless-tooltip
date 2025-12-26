@@ -52,10 +52,3 @@ function App() {
 ```
 
 That's it! You now have a fully functional, accessible tooltip.
-
-## What's Next?
-
-- [Installation & Setup](./getting-started/installation.md) - Detailed installation instructions
-- [Basic Usage](./getting-started/basic-usage.md) - Learn the fundamentals
-- [API Reference](./api/tooltip.md) - Complete API documentation
-- [Examples](./examples/basic.md) - See it in action

@@ -5,6 +5,8 @@ description: Common issues and solutions
 keywords: [tooltip issues, troubleshooting, debugging]
 ---
 
+import LiveCodeEditor from '@site/src/components/LiveCodeEditor';
+
 # Troubleshooting
 
 Common issues and their solutions.
@@ -275,9 +277,3 @@ function DebugTooltip() {
   );
 }
 ```
-
-## Next Steps
-
-- [API Reference](../api/tooltip.md)
-- [Styling Examples](./styling.md)
-- [GitHub Issues](https://github.com/rezasohrabi/headlessui-tooltip/issues)

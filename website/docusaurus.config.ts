@@ -91,7 +91,7 @@ const config: Config = {
         ]
       : [],
 
-  clientModules: [require.resolve('./src/clientModules/gtag.ts')],
+  clientModules: ['./src/clientModules/gtag.ts'],
 
   themeConfig: {
     image: 'img/social-card.png',
@@ -137,8 +137,12 @@ const config: Config = {
               to: '/docs/getting-started/installation',
             },
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Demo',
+              to: '/docs/examples/styling',
+            },
+            {
+              label: 'FAQ',
+              to: '/docs/faq',
             },
           ],
         },
@@ -152,15 +156,6 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/rezasohrabi/headless-tooltip',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Storybook',
-              href: 'https://rezasohrabi.github.io/headless-tooltip/storybook-static',
             },
             {
               label: 'Examples',

@@ -57,6 +57,15 @@
   justify-content: center;
 }
 
+/* Tailwind CSS support */
+#live-preview-wrapper {
+  width: 100%;
+}
+
+#live-preview-wrapper * {
+  box-sizing: border-box;
+}
+
 .live-error {
   background: #ff000010;
   border-top: 2px solid #ff0000;
