@@ -363,5 +363,5 @@ function ThemedTooltips() {
 ## Next Steps
 
 - [Animations Guide](./animations.md) - Add beautiful animations
-- [Interactive Examples](./playground.md) - Try live examples
+- [Animation Examples](./animations.md) - Add animations to tooltips
 - [API Reference](../api/tooltip.md) - Full API documentation

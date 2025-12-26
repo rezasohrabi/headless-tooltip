@@ -1,0 +1,25 @@
+# robots.txt for Headless React Tooltip
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://rezasohrabi.github.io/headless-tooltip/sitemap.xml
+
+# Disallow admin and build directories
+User-agent: *
+Disallow: /admin/
+Disallow: /.docusaurus/
+
+# Allow search engines to index all pages
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay for nice behavior
+Crawl-delay: 0
+

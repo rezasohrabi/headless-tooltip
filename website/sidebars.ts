@@ -27,16 +27,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Examples',
-      items: ['examples/playground', 'examples/styling', 'examples/animations'],
-    },
-    {
-      type: 'category',
-      label: 'Advanced',
       items: [
-        'advanced/custom-positioning',
-        'advanced/interactive',
-        'advanced/performance',
-        'advanced/troubleshooting',
+        'examples/styling',
+        'examples/animations',
+        'examples/custom-positioning',
+        'examples/interactive',
+        'examples/performance',
+        'examples/troubleshooting',
       ],
     },
     'faq',

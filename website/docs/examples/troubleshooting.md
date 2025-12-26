@@ -279,5 +279,5 @@ function DebugTooltip() {
 ## Next Steps
 
 - [API Reference](../api/tooltip.md)
-- [Examples](../examples/playground.md)
+- [Styling Examples](./styling.md)
 - [GitHub Issues](https://github.com/rezasohrabi/headlessui-tooltip/issues)

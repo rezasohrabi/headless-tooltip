@@ -5,9 +5,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Headless React Tooltip - Lightweight & Accessible Tooltip Component',
+  title: '⚡ Headless React Tooltip 🚀',
   tagline:
-    'A powerful, lightweight, and fully accessible headless React tooltip component with zero styling opinions and full customization control',
+    'Accessible Headless UI Component for building powerful React Tooltips!',
   favicon: 'img/social-card.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -103,13 +103,12 @@ const config: Config = {
     metadata: [
       {
         name: 'description',
-        content:
-          'Lightweight, accessible React tooltip component. Zero styling, full control. Works with React 17, 18, 19. TypeScript support, WAI-ARIA compliant, customizable positioning.',
+        content: 'Headless UI Component for building powerful React Tooltips!',
       },
       {
         name: 'keywords',
         content:
-          'headless tooltip, react headless tooltip, headless-ui tooltip,headless ui tooltip, react tooltip, headless ui, accessible tooltip, react tooltip component, tooltip library, lightweight tooltip, customizable tooltip, interactive tooltip',
+          'react, tooltip, react-tooltip, headless-tooltip, headlessui-tooltip, headlessui-react-tooltip, tooltip-component, react-component, component, headless-ui, accessible-tooltip, ui-component, tooltip-library, customizable-tooltip, interactive-tooltip, aria-tooltip, typescript',
       },
     ],
     navbar: {

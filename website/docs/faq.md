@@ -345,5 +345,5 @@ Still have questions?
 
 - 📖 [Documentation](/docs/intro)
 - 💬 [GitHub Issues](https://github.com/rezasohrabi/headlessui-tooltip/issues)
-- 🎮 [Live Examples](/docs/examples/playground)
+- 🎨 [Styling Examples](/docs/examples/styling)
 - 📚 [API Reference](/docs/api/tooltip)

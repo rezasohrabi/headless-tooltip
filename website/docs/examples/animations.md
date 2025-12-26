@@ -482,6 +482,6 @@ Animate based on tooltip position:
 
 ## Next Steps
 
-- [Interactive Playground](./playground.md) - Try animations live
+- [Styling Guide](./styling.md) - Learn more styling techniques
 - [Styling Guide](./styling.md) - Learn more styling techniques
 - [API Reference](../api/tooltip.md) - Full transition API
