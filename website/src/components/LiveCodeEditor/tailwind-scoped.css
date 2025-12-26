@@ -1,0 +1,990 @@
+/* Scoped Tailwind CSS - Only affects .live-preview-content and its children */
+
+.live-preview-content {
+  /* Tailwind Reset - scoped to this container only */
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+}
+
+.live-preview-content *,
+.live-preview-content *::before,
+.live-preview-content *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+/* Common Tailwind Utility Classes - Scoped to .live-preview-content and tooltips in portal */
+.live-preview-content .flex,
+.headless-popper .flex {
+  display: flex;
+}
+.live-preview-content .inline-flex,
+.headless-popper .inline-flex {
+  display: inline-flex;
+}
+.live-preview-content .grid,
+.headless-popper .grid {
+  display: grid;
+}
+.live-preview-content .hidden,
+.headless-popper .hidden {
+  display: none;
+}
+.live-preview-content .block,
+.headless-popper .block {
+  display: block;
+}
+.live-preview-content .inline-block,
+.headless-popper .inline-block {
+  display: inline-block;
+}
+.live-preview-content .inline,
+.headless-popper .inline {
+  display: inline;
+}
+
+/* Flexbox */
+.live-preview-content .flex-col,
+.headless-popper .flex-col {
+  flex-direction: column;
+}
+.live-preview-content .flex-row,
+.headless-popper .flex-row {
+  flex-direction: row;
+}
+.live-preview-content .flex-wrap,
+.headless-popper .flex-wrap {
+  flex-wrap: wrap;
+}
+.live-preview-content .items-center,
+.headless-popper .items-center {
+  align-items: center;
+}
+.live-preview-content .items-start,
+.headless-popper .items-start {
+  align-items: flex-start;
+}
+.live-preview-content .items-end,
+.headless-popper .items-end {
+  align-items: flex-end;
+}
+.live-preview-content .justify-center,
+.headless-popper .justify-center {
+  justify-content: center;
+}
+.live-preview-content .justify-start,
+.headless-popper .justify-start {
+  justify-content: flex-start;
+}
+.live-preview-content .justify-end,
+.headless-popper .justify-end {
+  justify-content: flex-end;
+}
+.live-preview-content .justify-between,
+.headless-popper .justify-between {
+  justify-content: space-between;
+}
+.live-preview-content .gap-1,
+.headless-popper .gap-1 {
+  gap: 0.25rem;
+}
+.live-preview-content .gap-2,
+.headless-popper .gap-2 {
+  gap: 0.5rem;
+}
+.live-preview-content .gap-3,
+.headless-popper .gap-3 {
+  gap: 0.75rem;
+}
+.live-preview-content .gap-4,
+.headless-popper .gap-4 {
+  gap: 1rem;
+}
+
+/* Spacing */
+.live-preview-content .p-1,
+.headless-popper .p-1 {
+  padding: 0.25rem;
+}
+.live-preview-content .p-2,
+.headless-popper .p-2 {
+  padding: 0.5rem;
+}
+.live-preview-content .p-3,
+.headless-popper .p-3 {
+  padding: 0.75rem;
+}
+.live-preview-content .p-4,
+.headless-popper .p-4 {
+  padding: 1rem;
+}
+.live-preview-content .p-6,
+.headless-popper .p-6 {
+  padding: 1.5rem;
+}
+.live-preview-content .p-8,
+.headless-popper .p-8 {
+  padding: 2rem;
+}
+.live-preview-content .px-2,
+.headless-popper .px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.live-preview-content .px-3,
+.headless-popper .px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.live-preview-content .px-4,
+.headless-popper .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.live-preview-content .py-1,
+.headless-popper .py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.live-preview-content .py-2,
+.headless-popper .py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.live-preview-content .py-3,
+.headless-popper .py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.live-preview-content .m-1,
+.headless-popper .m-1 {
+  margin: 0.25rem;
+}
+.live-preview-content .m-2,
+.headless-popper .m-2 {
+  margin: 0.5rem;
+}
+.live-preview-content .m-4,
+.headless-popper .m-4 {
+  margin: 1rem;
+}
+.live-preview-content .mx-auto,
+.headless-popper .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.live-preview-content .mb-2,
+.headless-popper .mb-2 {
+  margin-bottom: 0.5rem;
+}
+.live-preview-content .mr-2,
+.headless-popper .mr-2 {
+  margin-right: 0.5rem;
+}
+.live-preview-content .bg-transparent,
+.headless-popper .bg-transparent {
+  background-color: transparent;
+}
+.live-preview-content .border-none,
+.headless-popper .border-none {
+  border: none;
+}
+.live-preview-content .text-left,
+.headless-popper .text-left {
+  text-align: left;
+}
+
+/* Colors - Background */
+.live-preview-content .bg-white,
+.headless-popper .bg-white {
+  background-color: rgb(255 255 255);
+}
+.live-preview-content .bg-black,
+.headless-popper .bg-black {
+  background-color: rgb(0 0 0);
+}
+.live-preview-content .bg-gray-50,
+.headless-popper .bg-gray-50 {
+  background-color: rgb(249 250 251);
+}
+.live-preview-content .bg-gray-100,
+.headless-popper .bg-gray-100 {
+  background-color: rgb(243 244 246);
+}
+.live-preview-content .bg-gray-200,
+.headless-popper .bg-gray-200 {
+  background-color: rgb(229 231 235);
+}
+.live-preview-content .bg-gray-300,
+.headless-popper .bg-gray-300 {
+  background-color: rgb(209 213 219);
+}
+.live-preview-content .bg-gray-400,
+.headless-popper .bg-gray-400 {
+  background-color: rgb(156 163 175);
+}
+.live-preview-content .bg-gray-500,
+.headless-popper .bg-gray-500 {
+  background-color: rgb(107 114 128);
+}
+.live-preview-content .bg-gray-600,
+.headless-popper .bg-gray-600 {
+  background-color: rgb(75 85 99);
+}
+.live-preview-content .bg-gray-700,
+.headless-popper .bg-gray-700 {
+  background-color: rgb(55 65 81);
+}
+.live-preview-content .bg-gray-800,
+.headless-popper .bg-gray-800 {
+  background-color: rgb(31 41 55);
+}
+.live-preview-content .bg-gray-900,
+.headless-popper .bg-gray-900 {
+  background-color: rgb(17 24 39);
+}
+.live-preview-content .bg-blue-500,
+.headless-popper .bg-blue-500 {
+  background-color: rgb(59 130 246);
+}
+.live-preview-content .bg-blue-600,
+.headless-popper .bg-blue-600 {
+  background-color: rgb(37 99 235);
+}
+.live-preview-content .bg-green-500,
+.headless-popper .bg-green-500 {
+  background-color: rgb(34 197 94);
+}
+.live-preview-content .bg-green-600,
+.headless-popper .bg-green-600 {
+  background-color: rgb(22 163 74);
+}
+.live-preview-content .bg-red-500,
+.headless-popper .bg-red-500 {
+  background-color: rgb(239 68 68);
+}
+.live-preview-content .bg-red-600,
+.headless-popper .bg-red-600 {
+  background-color: rgb(220 38 38);
+}
+.live-preview-content .bg-yellow-500,
+.headless-popper .bg-yellow-500 {
+  background-color: rgb(234 179 8);
+}
+.live-preview-content .bg-yellow-600,
+.headless-popper .bg-yellow-600 {
+  background-color: rgb(202 138 4);
+}
+.live-preview-content .bg-purple-500,
+.headless-popper .bg-purple-500 {
+  background-color: rgb(168 85 247);
+}
+.live-preview-content .bg-purple-600,
+.headless-popper .bg-purple-600 {
+  background-color: rgb(147 51 234);
+}
+
+/* Colors - Text */
+.live-preview-content .text-white,
+.headless-popper .text-white {
+  color: rgb(255 255 255);
+}
+.live-preview-content .text-black,
+.headless-popper .text-black {
+  color: rgb(0 0 0);
+}
+.live-preview-content .text-gray-50,
+.headless-popper .text-gray-50 {
+  color: rgb(249 250 251);
+}
+.live-preview-content .text-gray-100,
+.headless-popper .text-gray-100 {
+  color: rgb(243 244 246);
+}
+.live-preview-content .text-gray-200,
+.headless-popper .text-gray-200 {
+  color: rgb(229 231 235);
+}
+.live-preview-content .text-gray-300,
+.headless-popper .text-gray-300 {
+  color: rgb(209 213 219);
+}
+.live-preview-content .text-gray-400,
+.headless-popper .text-gray-400 {
+  color: rgb(156 163 175);
+}
+.live-preview-content .text-gray-500,
+.headless-popper .text-gray-500 {
+  color: rgb(107 114 128);
+}
+.live-preview-content .text-gray-600,
+.headless-popper .text-gray-600 {
+  color: rgb(75 85 99);
+}
+.live-preview-content .text-gray-700,
+.headless-popper .text-gray-700 {
+  color: rgb(55 65 81);
+}
+.live-preview-content .text-gray-800,
+.headless-popper .text-gray-800 {
+  color: rgb(31 41 55);
+}
+.live-preview-content .text-gray-900,
+.headless-popper .text-gray-900 {
+  color: rgb(17 24 39);
+}
+.live-preview-content .text-blue-500,
+.headless-popper .text-blue-500 {
+  color: rgb(59 130 246);
+}
+.live-preview-content .text-blue-600,
+.headless-popper .text-blue-600 {
+  color: rgb(37 99 235);
+}
+.live-preview-content .text-green-500,
+.headless-popper .text-green-500 {
+  color: rgb(34 197 94);
+}
+.live-preview-content .text-green-600,
+.headless-popper .text-green-600 {
+  color: rgb(22 163 74);
+}
+.live-preview-content .text-red-500,
+.headless-popper .text-red-500 {
+  color: rgb(239 68 68);
+}
+.live-preview-content .text-red-600,
+.headless-popper .text-red-600 {
+  color: rgb(220 38 38);
+}
+
+/* Typography */
+.live-preview-content .text-xs,
+.headless-popper .text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.live-preview-content .text-sm,
+.headless-popper .text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.live-preview-content .text-base,
+.headless-popper .text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.live-preview-content .text-lg,
+.headless-popper .text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.live-preview-content .text-xl,
+.headless-popper .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.live-preview-content .font-medium,
+.headless-popper .font-medium {
+  font-weight: 500;
+}
+.live-preview-content .font-semibold,
+.headless-popper .font-semibold {
+  font-weight: 600;
+}
+.live-preview-content .font-bold,
+.headless-popper .font-bold {
+  font-weight: 700;
+}
+.live-preview-content .uppercase,
+.headless-popper .uppercase {
+  text-transform: uppercase;
+}
+.live-preview-content .lowercase,
+.headless-popper .lowercase {
+  text-transform: lowercase;
+}
+.live-preview-content .capitalize,
+.headless-popper .capitalize {
+  text-transform: capitalize;
+}
+
+/* Borders */
+.live-preview-content .rounded,
+.headless-popper .rounded {
+  border-radius: 0.25rem;
+}
+.live-preview-content .rounded-md,
+.headless-popper .rounded-md {
+  border-radius: 0.375rem;
+}
+.live-preview-content .rounded-lg,
+.headless-popper .rounded-lg {
+  border-radius: 0.5rem;
+}
+.live-preview-content .rounded-xl,
+.headless-popper .rounded-xl {
+  border-radius: 0.75rem;
+}
+.live-preview-content .rounded-full,
+.headless-popper .rounded-full {
+  border-radius: 9999px;
+}
+.live-preview-content .border,
+.headless-popper .border {
+  border-width: 1px;
+}
+.live-preview-content .border-2,
+.headless-popper .border-2 {
+  border-width: 2px;
+}
+.live-preview-content .border-gray-600,
+.headless-popper .border-gray-600 {
+  border-color: rgb(75 85 99);
+}
+
+/* Shadows */
+.live-preview-content .shadow,
+.headless-popper .shadow {
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.live-preview-content .shadow-md,
+.headless-popper .shadow-md {
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.live-preview-content .shadow-lg,
+.headless-popper .shadow-lg {
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.live-preview-content .shadow-xl,
+.headless-popper .shadow-xl {
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Cursor */
+.live-preview-content .cursor-pointer,
+.headless-popper .cursor-pointer {
+  cursor: pointer;
+}
+.live-preview-content .cursor-not-allowed,
+.headless-popper .cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/* Hover states */
+.live-preview-content .hover\:bg-blue-600:hover {
+  background-color: rgb(37 99 235);
+}
+.live-preview-content .hover\:bg-green-600:hover {
+  background-color: rgb(22 163 74);
+}
+.live-preview-content .hover\:bg-gray-600:hover {
+  background-color: rgb(75 85 99);
+}
+
+/* Width & Height */
+.live-preview-content .w-full,
+.headless-popper .w-full {
+  width: 100%;
+}
+.live-preview-content .w-auto,
+.headless-popper .w-auto {
+  width: auto;
+}
+.live-preview-content .h-full,
+.headless-popper .h-full {
+  height: 100%;
+}
+.live-preview-content .h-auto,
+.headless-popper .h-auto {
+  height: auto;
+}
+
+/* Position */
+.live-preview-content .relative,
+.headless-popper .relative {
+  position: relative;
+}
+.live-preview-content .absolute,
+.headless-popper .absolute {
+  position: absolute;
+}
+.live-preview-content .fixed,
+.headless-popper .fixed {
+  position: fixed;
+}
+
+/* Overflow */
+.live-preview-content .overflow-hidden,
+.headless-popper .overflow-hidden {
+  overflow: hidden;
+}
+.live-preview-content .overflow-auto,
+.headless-popper .overflow-auto {
+  overflow: auto;
+}
+
+/* Z-index */
+.live-preview-content .z-10,
+.headless-popper .z-10 {
+  z-index: 10;
+}
+.live-preview-content .z-20,
+.headless-popper .z-20 {
+  z-index: 20;
+}
+.live-preview-content .z-50,
+.headless-popper .z-50 {
+  z-index: 50;
+}
+
+.live-preview-content .my-tooltip,
+.headless-popper .my-tooltip {
+  background: #999;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.live-preview-content .my-tooltip-arrow,
+.headless-popper .my-tooltip-arrow {
+  background: #333;
+}
+
+/* Animation Classes - Scoped to .live-preview-content and .headless-popper */
+
+/* Bounce In Out */
+.live-preview-content .bounce-in-out[data-enter],
+.headless-popper .bounce-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .bounce-in-out[data-entering],
+.headless-popper .bounce-in-out[data-entering] {
+  opacity: 1;
+  animation: bounceIn;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .bounce-in-out[data-exiting],
+.headless-popper .bounce-in-out[data-exiting] {
+  animation: bounceOut;
+  animation-duration: 400ms !important;
+}
+
+/* Back In Out */
+.live-preview-content .back-in-out[data-enter],
+.headless-popper .back-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .back-in-out[data-entering],
+.headless-popper .back-in-out[data-entering] {
+  opacity: 1;
+  animation: backInDown;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .back-in-out[data-exiting],
+.headless-popper .back-in-out[data-exiting] {
+  animation: backOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* Fade In Out Down */
+.live-preview-content .fade-in-out-down[data-enter],
+.headless-popper .fade-in-out-down[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .fade-in-out-down[data-entering],
+.headless-popper .fade-in-out-down[data-entering] {
+  opacity: 1;
+  animation: fadeInDown;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .fade-in-out-down[data-exiting],
+.headless-popper .fade-in-out-down[data-exiting] {
+  animation: fadeOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* Fade In Out Bottom Left */
+.live-preview-content .fade-in-out-bottom-left[data-enter],
+.headless-popper .fade-in-out-bottom-left[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .fade-in-out-bottom-left[data-entering],
+.headless-popper .fade-in-out-bottom-left[data-entering] {
+  opacity: 1;
+  animation: fadeInBottomRight;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .fade-in-out-bottom-left[data-exiting],
+.headless-popper .fade-in-out-bottom-left[data-exiting] {
+  animation: fadeOutBottomLeft;
+  animation-duration: 400ms !important;
+}
+
+/* Flip In Out */
+.live-preview-content .flip-in-out[data-enter],
+.headless-popper .flip-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .flip-in-out[data-entering],
+.headless-popper .flip-in-out[data-entering] {
+  opacity: 1;
+  animation: flip;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .flip-in-out[data-exiting],
+.headless-popper .flip-in-out[data-exiting] {
+  animation: flip;
+  animation-duration: 400ms !important;
+}
+
+/* Flip In Out X */
+.live-preview-content .flip-in-out-x[data-enter],
+.headless-popper .flip-in-out-x[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .flip-in-out-x[data-entering],
+.headless-popper .flip-in-out-x[data-entering] {
+  opacity: 1;
+  animation: flipInX;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .flip-in-out-x[data-exiting],
+.headless-popper .flip-in-out-x[data-exiting] {
+  animation: flipOutX;
+  animation-duration: 400ms !important;
+}
+
+/* Light Speed In Out */
+.live-preview-content .light-speed-in-out[data-enter],
+.headless-popper .light-speed-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .light-speed-in-out[data-entering],
+.headless-popper .light-speed-in-out[data-entering] {
+  opacity: 1;
+  animation: lightSpeedInLeft;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .light-speed-in-out[data-exiting],
+.headless-popper .light-speed-in-out[data-exiting] {
+  animation: lightSpeedOutRight;
+  animation-duration: 400ms !important;
+}
+
+/* Rotate In Out */
+.live-preview-content .rotate-in-out[data-enter],
+.headless-popper .rotate-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .rotate-in-out[data-entering],
+.headless-popper .rotate-in-out[data-entering] {
+  opacity: 1;
+  animation: rotateIn;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .rotate-in-out[data-exiting],
+.headless-popper .rotate-in-out[data-exiting] {
+  animation: rotateOut;
+  animation-duration: 400ms !important;
+}
+
+/* Hinge In Out */
+.live-preview-content .hinge-in-out[data-enter],
+.headless-popper .hinge-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .hinge-in-out[data-entering],
+.headless-popper .hinge-in-out[data-entering] {
+  opacity: 1;
+  animation: jackInTheBox;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .hinge-in-out[data-exiting],
+.headless-popper .hinge-in-out[data-exiting] {
+  animation: hinge;
+  animation-duration: 400ms !important;
+}
+
+/* Roll In Out */
+.live-preview-content .roll-in-out[data-enter],
+.headless-popper .roll-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .roll-in-out[data-entering],
+.headless-popper .roll-in-out[data-entering] {
+  opacity: 1;
+  animation: rollIn;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .roll-in-out[data-exiting],
+.headless-popper .roll-in-out[data-exiting] {
+  animation: rollOut;
+  animation-duration: 400ms !important;
+}
+
+/* Zoom In Out */
+.live-preview-content .zoom-in-out[data-enter],
+.headless-popper .zoom-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .zoom-in-out[data-entering],
+.headless-popper .zoom-in-out[data-entering] {
+  opacity: 1;
+  animation: zoomIn;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .zoom-in-out[data-exiting],
+.headless-popper .zoom-in-out[data-exiting] {
+  animation: zoomOut;
+  animation-duration: 400ms !important;
+}
+
+/* Zoom In Out Down */
+.live-preview-content .zoom-in-out-down[data-enter],
+.headless-popper .zoom-in-out-down[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .zoom-in-out-down[data-entering],
+.headless-popper .zoom-in-out-down[data-entering] {
+  opacity: 1;
+  animation: zoomInDown;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .zoom-in-out-down[data-exiting],
+.headless-popper .zoom-in-out-down[data-exiting] {
+  animation: zoomOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* Slide In Out */
+.live-preview-content .slide-in-out[data-enter],
+.headless-popper .slide-in-out[data-enter] {
+  opacity: 0;
+}
+
+.live-preview-content .slide-in-out[data-entering],
+.headless-popper .slide-in-out[data-entering] {
+  opacity: 1;
+  animation: slideInUp;
+  animation-duration: 400ms !important;
+}
+
+.live-preview-content .slide-in-out[data-exiting],
+.headless-popper .slide-in-out[data-exiting] {
+  animation: slideOutDown;
+  animation-duration: 400ms !important;
+}
+
+/* Interactive Tooltip Styles - Scoped to .live-preview-content and .headless-popper */
+
+/* Form styles */
+.live-preview-content form,
+.headless-popper form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.live-preview-content input[type='email'],
+.live-preview-content input[type='text'],
+.headless-popper input[type='email'],
+.headless-popper input[type='text'] {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #4b5563;
+  background-color: #1f2937;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.live-preview-content input[type='email']:focus,
+.live-preview-content input[type='text']:focus,
+.headless-popper input[type='email']:focus,
+.headless-popper input[type='text']:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* Menu styles */
+.live-preview-content .menu,
+.headless-popper .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+}
+
+.live-preview-content .menu-item,
+.headless-popper .menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.live-preview-content .menu-item:hover,
+.headless-popper .menu-item:hover {
+  background-color: #374151;
+}
+
+/* User card styles */
+.live-preview-content .user-card,
+.headless-popper .user-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  min-width: 200px;
+}
+
+.live-preview-content .user-card img,
+.headless-popper .user-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.live-preview-content .user-card h3,
+.headless-popper .user-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.live-preview-content .user-card p,
+.headless-popper .user-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.live-preview-content .stats,
+.headless-popper .stats {
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #374151;
+}
+
+.live-preview-content .stats div,
+.headless-popper .stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.live-preview-content .stats strong,
+.headless-popper .stats strong {
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+.live-preview-content .stats span,
+.headless-popper .stats span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Avatar trigger */
+.live-preview-content .avatar-trigger,
+.headless-popper .avatar-trigger {
+  cursor: pointer;
+}
+
+.live-preview-content .avatar-trigger img,
+.headless-popper .avatar-trigger img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

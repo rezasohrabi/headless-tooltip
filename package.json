@@ -1,6 +1,6 @@
 {
   "name": "headless-tooltip",
-  "version": "1.1.12",
+  "version": "1.2.0",
   "description": "Headless UI Component for building powerful React Tooltips!",
   "main": "dist/headless-tooltip.mjs",
   "module": "dist/headless-tooltip.mjs",
@@ -36,6 +36,7 @@
     "prepare": "husky"
   },
   "keywords": [
+    "react",
     "tooltip",
     "react-tooltip",
     "headless-tooltip",
@@ -44,7 +45,14 @@
     "tooltip-component",
     "react-component",
     "component",
-    "react"
+    "headless-ui",
+    "accessible-tooltip",
+    "ui-component",
+    "tooltip-library",
+    "customizable-tooltip",
+    "interactive-tooltip",
+    "aria-tooltip",
+    "typescript"
   ],
   "author": "Reza Sohrabi",
   "license": "MIT",

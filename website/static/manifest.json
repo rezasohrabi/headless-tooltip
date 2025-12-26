@@ -1,0 +1,22 @@
+{
+  "name": "Headless React Tooltip",
+  "short_name": "Headless Tooltip",
+  "description": "Lightweight, accessible React tooltip component with zero styling opinions and full customization control",
+  "start_url": "/headless-tooltip/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/headless-tooltip/img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["development", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/headless-tooltip/"
+}

@@ -1,0 +1,282 @@
+.installation-section {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  background: linear-gradient(180deg, #0f0f23 0%, #1a1a3a 50%, #0f0f23 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.installation-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(99, 102, 241, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.installation-container {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.installation-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+  background: linear-gradient(45deg, #fff, #e0e7ff, #c7d2fe);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.installation-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #e0e7ff;
+  opacity: 0.9;
+}
+
+.install-commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.install-command-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.install-command-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+}
+
+.command-header {
+  margin-bottom: 1rem;
+}
+
+.command-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.command-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.command-text {
+  background-color: transparent;
+  flex: 1;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 6px;
+  color: #c7d2fe;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: scale(1.05);
+}
+
+.copy-button.copied {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #86efac;
+}
+
+.links-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.link-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.link-icon {
+  flex-shrink: 0;
+}
+
+.github-link {
+  background: linear-gradient(135deg, #24292e 0%, #1a1d23 100%);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.github-link:hover {
+  background: linear-gradient(135deg, #2c3137 0%, #24292e 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.npm-link {
+  background: linear-gradient(135deg, #cb3837 0%, #a82d2c 100%);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.npm-link:hover {
+  background: linear-gradient(135deg, #d64645 0%, #cb3837 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(203, 56, 55, 0.4);
+}
+
+.docs-link {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.docs-link:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.quick-example {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.example-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #e0e7ff;
+}
+
+.example-code {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.example-code code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0e7ff;
+  white-space: pre;
+}
+
+@media (max-width: 768px) {
+  .installation-section {
+    padding: 3rem 1rem;
+  }
+
+  .installation-title {
+    font-size: 2rem;
+  }
+
+  .installation-subtitle {
+    font-size: 1rem;
+  }
+
+  .install-commands-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .links-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .link-button {
+    justify-content: center;
+  }
+
+  .command-text {
+    font-size: 0.85rem;
+  }
+
+  .example-code code {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .installation-title {
+    font-size: 1.75rem;
+  }
+
+  .command-wrapper {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .quick-example {
+    padding: 1.5rem;
+  }
+}

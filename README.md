@@ -4,6 +4,10 @@
 
 A lightweight, customizable tooltip component for React with zero styling opinions. Built with accessibility in mind.
 
+Perfect for modern web applications. Works seamlessly with React 17, 18, and 19. Built with TypeScript and accessibility in mind.
+
+[🎮 Live Demo](https://rezasohrabi.github.io/headless-tooltip/) | [📦 NPM Package](https://www.npmjs.com/package/headless-tooltip)
+
 If you find **Headless-Tooltip** useful, please consider giving it a ⭐
 
 ## Table of Contents
