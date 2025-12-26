@@ -36,6 +36,7 @@
     "prepare": "husky"
   },
   "keywords": [
+    "react",
     "tooltip",
     "react-tooltip",
     "headless-tooltip",
@@ -44,7 +45,14 @@
     "tooltip-component",
     "react-component",
     "component",
-    "react"
+    "headless-ui",
+    "accessible-tooltip",
+    "ui-component",
+    "tooltip-library",
+    "customizable-tooltip",
+    "interactive-tooltip",
+    "aria-tooltip",
+    "typescript"
   ],
   "author": "Reza Sohrabi",
   "license": "MIT",

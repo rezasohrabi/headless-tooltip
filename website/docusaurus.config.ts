@@ -5,8 +5,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Headless React Tooltip',
-  tagline: 'Next-generation headless UI components for React',
+  title: 'Headless React Tooltip - Lightweight & Accessible Tooltip Component',
+  tagline:
+    'A powerful, lightweight, and fully accessible headless React tooltip component with zero styling opinions and full customization control',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -44,14 +45,18 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/rezasohrabi/headless-tooltip/tree/main/website/',
         },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
     ],
@@ -67,9 +72,37 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://www.googletagmanager.com',
+      },
+    },
+  ],
+
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.png',
+    metadata: [
+      {
+        name: 'description',
+        content:
+          'Lightweight, accessible React tooltip component. Zero styling, full control. Works with React 17, 18, 19. TypeScript support, WAI-ARIA compliant, customizable positioning.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'headless tooltip, react headless tooltip, headless-ui tooltip,headless ui tooltip, react tooltip, headless ui, accessible tooltip, react tooltip component, tooltip library, lightweight tooltip, customizable tooltip, interactive tooltip',
+      },
+    ],
     navbar: {
       title: 'Headless React Tooltip',
       logo: {
@@ -82,6 +115,11 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Tutorial',
+        },
+        {
+          href: 'https://www.npmjs.com/package/headless-tooltip',
+          label: 'NPM',
+          position: 'right',
         },
         {
           href: 'https://github.com/rezasohrabi/headless-tooltip',
@@ -97,25 +135,25 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
+              label: 'Getting Started',
+              to: '/docs/getting-started/installation',
+            },
+            {
               label: 'Tutorial',
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Resources',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'NPM Package',
+              href: 'https://www.npmjs.com/package/headless-tooltip',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/rezasohrabi/headless-tooltip',
             },
           ],
         },
@@ -123,8 +161,12 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/rezasohrabi/headless-tooltip',
+              label: 'Storybook',
+              href: 'https://rezasohrabi.github.io/headless-tooltip/storybook-static',
+            },
+            {
+              label: 'Examples',
+              href: 'https://github.com/rezasohrabi/headless-tooltip/tree/main/examples',
             },
           ],
         },
