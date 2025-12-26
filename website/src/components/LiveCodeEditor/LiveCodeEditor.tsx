@@ -3,8 +3,9 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { themes } from 'prism-react-renderer';
 import Tooltip from 'headless-tooltip';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { TailwindLoader } from './TailwindLoader';
+import 'animate.css';
 import './LiveCodeEditor.css';
+import './tailwind-scoped.css';
 
 interface LiveCodeEditorProps {
   code: string;
@@ -32,6 +33,13 @@ const Style = ({ children }: { children: string }) => {
   return null;
 };
 
+// Simple preview wrapper with scoped Tailwind CSS
+const ScopedTailwindPreview: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return <div className="live-preview-content">{children}</div>;
+};
+
 const LiveCodeEditor: React.FC<LiveCodeEditorProps> = ({
   code,
   noInline = false,
@@ -56,7 +64,6 @@ const LiveCodeEditor: React.FC<LiveCodeEditorProps> = ({
             ...scope,
           }}
         >
-          <TailwindLoader />
           <div className="live-code-editor">
             <div className="live-editor-container">
               <div className="live-editor-header">
@@ -68,11 +75,9 @@ const LiveCodeEditor: React.FC<LiveCodeEditorProps> = ({
               <div className="live-preview-header">
                 <span className="live-preview-title">👁️ Preview</span>
               </div>
-              <div className="live-preview-content">
-                <div id="live-preview-wrapper">
-                  <LivePreview />
-                </div>
-              </div>
+              <ScopedTailwindPreview>
+                <LivePreview />
+              </ScopedTailwindPreview>
               <LiveError className="live-error" />
             </div>
           </div>

@@ -55,15 +55,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Tailwind CSS support */
-#live-preview-wrapper {
-  width: 100%;
-}
-
-#live-preview-wrapper * {
-  box-sizing: border-box;
+  contain: layout style paint; /* CSS containment to isolate styles */
+  isolation: isolate; /* Create new stacking context */
 }
 
 .live-error {

@@ -5,6 +5,8 @@ description: Common questions about Headless React Tooltip
 keywords: [tooltip faq, common questions, help]
 ---
 
+import LiveCodeEditor from '@site/src/components/LiveCodeEditor';
+
 # Frequently Asked Questions
 
 ## General Questions
@@ -34,16 +36,6 @@ React 17, 18, and 19 are fully supported.
 ```
 
 ## Installation
-
-### How do I install?
-
-```bash
-npm install headless-tooltip
-# or
-pnpm add headless-tooltip
-# or
-yarn add headless-tooltip
-```
 
 ### Do I need additional dependencies?
 
@@ -84,45 +76,151 @@ Yes! Content can be any React node:
 
 ### How do I add an arrow?
 
-Set `arrow={true}`:
+Set `arrow={true}` and style the arrow:
 
-```jsx
+<LiveCodeEditor
+code={`function ArrowTooltip() {
+return (
 <Tooltip
-  content="With arrow"
-  arrow={true}
-  arrowSize={10}
-  arrowClassName="my-arrow"
->
-  <button>Hover me</button>
+content="Tooltip with arrow"
+arrow={true}
+arrowSize={10}
+style={{
+        background: '#1f2937',
+        color: 'white',
+        padding: '8px 12px',
+        borderRadius: '6px',
+        fontSize: '14px',
+        boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+      }}
+arrowClassName="bg-gray-800" >
+<button style={{
+        padding: '10px 20px',
+        background: '#6366f1',
+        color: 'white',
+        border: 'none',
+        borderRadius: '6px',
+        cursor: 'pointer'
+      }}>
+Hover me
+</button>
 </Tooltip>
-```
+);
+}
+
+render(<ArrowTooltip />);`}
+noInline
+/>
 
 ### Can tooltips be interactive?
 
-Yes! Set `disableInteractive={false}`:
+Yes! Set `disableInteractive={false}` to allow users to interact with tooltip content:
 
-```jsx
+<LiveCodeEditor
+code={`function InteractiveTooltip() {
+const handleClick = () => {
+alert('Button clicked inside tooltip!');
+};
+
+return (
 <Tooltip
-  content={<button onClick={handleClick}>Click me</button>}
-  disableInteractive={false}
->
-  <button>Hover me</button>
+content={
+<div style={{
+          background: '#1f2937',
+          color: 'white',
+          padding: '12px',
+          borderRadius: '6px',
+          minWidth: '200px'
+        }}>
+<p style={{ margin: '0 0 8px 0', fontSize: '14px' }}>Interactive content</p>
+<button
+onClick={handleClick}
+style={{
+              background: '#6366f1',
+              color: 'white',
+              border: 'none',
+              padding: '8px 12px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              width: '100%',
+              fontSize: '14px'
+            }} >
+Click me
+</button>
+</div>
+}
+disableInteractive={false}
+closeDelay={500} >
+<button style={{
+        padding: '10px 20px',
+        background: '#6366f1',
+        color: 'white',
+        border: 'none',
+        borderRadius: '6px',
+        cursor: 'pointer'
+      }}>
+Hover me
+</button>
 </Tooltip>
-```
+);
+}
+
+render(<InteractiveTooltip />);`}
+noInline
+/>
 
 ## Positioning
 
 ### How do I change tooltip position?
 
-Use the `placement` prop:
+Use the `placement` prop to control where the tooltip appears:
 
-```jsx
-<Tooltip placement="top">
-  {' '}
-  {/* or bottom, left, right */}
-  <button>Hover me</button>
+<LiveCodeEditor
+code={`function PositioningExample() {
+const placements = ['top', 'right', 'bottom', 'left'];
+
+return (
+<div style={{
+      display: 'flex',
+      gap: '1rem',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      padding: '3rem'
+    }}>
+{placements.map(placement => (
+<Tooltip
+key={placement}
+content={\`Tooltip on \${placement}\`}
+placement={placement}
+style={{
+            background: '#6366f1',
+            color: 'white',
+            padding: '6px 10px',
+            borderRadius: '4px',
+            fontSize: '13px',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+          }} >
+<button style={{
+            padding: '8px 16px',
+            background: '#8b5cf6',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            textTransform: 'capitalize',
+            fontSize: '14px'
+          }}>
+{placement}
+</button>
 </Tooltip>
-```
+))}
+</div>
+);
+}
+
+render(<PositioningExample />);`}
+noInline
+/>
 
 Available placements:
 
@@ -137,40 +235,150 @@ Yes! Tooltip automatically adjusts position when near screen edges.
 
 ### Can I control the offset?
 
-Yes, use the `offset` prop:
+Yes, use the `offset` prop to control the distance between tooltip and trigger:
 
-```jsx
-<Tooltip offset={20}>
-  <button>Hover me</button>
+<LiveCodeEditor
+code={`function OffsetExample() {
+return (
+<div style={{
+      display: 'flex',
+      gap: '2rem',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '3rem'
+    }}>
+<Tooltip
+content="Small offset (4px)"
+offset={4}
+placement="top"
+style={{
+          background: '#1f2937',
+          color: 'white',
+          padding: '8px 12px',
+          borderRadius: '6px',
+          fontSize: '14px'
+        }} >
+<button style={{
+          padding: '10px 20px',
+          background: '#6366f1',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer'
+        }}>
+Small offset
+</button>
 </Tooltip>
-```
+
+      <Tooltip
+        content="Large offset (20px)"
+        offset={20}
+        placement="top"
+        style={{
+          background: '#1f2937',
+          color: 'white',
+          padding: '8px 12px',
+          borderRadius: '6px',
+          fontSize: '14px'
+        }}
+      >
+        <button style={{
+          padding: '10px 20px',
+          background: '#10b981',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer'
+        }}>
+          Large offset
+        </button>
+      </Tooltip>
+    </div>
+
+);
+}
+
+render(<OffsetExample />);`}
+noInline
+/>
 
 ## Animations
 
 ### How do I add animations?
 
-Enable transitions:
+Enable transitions and add CSS animations:
 
-```jsx
-<Tooltip
-  transition={{
-    enable: true,
-    enterDuration: 300,
-    exitDuration: 200,
-  }}
-  className="animated-tooltip"
->
-  <button>Hover me</button>
-</Tooltip>
-```
-
-Then style with CSS:
-
-```css
-.animated-tooltip[data-entering] {
-  animation: fadeIn 300ms;
+<LiveCodeEditor
+code={`function AnimatedTooltip() {
+return (
+<div style={{ padding: '3rem', textAlign: 'center' }}>
+<Style>{'
+.fade-tooltip[data-enter] {
+opacity: 0;
 }
-```
+.fade-tooltip[data-entering] {
+opacity: 1;
+animation: fadeIn 300ms ease-out;
+}
+.fade-tooltip[data-exiting] {
+opacity: 0;
+animation: fadeOut 200ms ease-in;
+}
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(-10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes fadeOut {
+from {
+opacity: 1;
+transform: translateY(0);
+}
+to {
+opacity: 0;
+transform: translateY(-10px);
+}
+}
+'}</Style>
+<Tooltip
+content="Animated tooltip with fade effect"
+transition={{
+          enable: true,
+          enterDuration: 300,
+          exitDuration: 200,
+        }}
+className="fade-tooltip"
+style={{
+          background: '#1f2937',
+          color: 'white',
+          padding: '8px 12px',
+          borderRadius: '6px',
+          fontSize: '14px',
+          boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+        }} >
+<button style={{
+          padding: '10px 20px',
+          background: '#6366f1',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer'
+        }}>
+Hover me
+</button>
+</Tooltip>
+</div>
+);
+}
+
+render(<AnimatedTooltip />);`}
+noInline
+/>
 
 ### What CSS frameworks work?
 
@@ -186,14 +394,6 @@ Yes! Headless Tooltip is:
 - GPU-accelerated animations
 - Lazy rendering
 - No unnecessary re-renders
-
-### How many tooltips can I use?
-
-There's no hard limit, but consider:
-
-- Use delays to prevent overwhelming users
-- Memoize expensive content
-- Use virtual scrolling for long lists
 
 ## Accessibility
 
@@ -217,39 +417,43 @@ Yes! Tooltips show on focus and hide on blur.
 
 Yes! Touch events are fully supported.
 
-### Should I use different behavior on mobile?
-
-Consider using click trigger on mobile:
-
-```jsx
-const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
-
-<Tooltip trigger={isMobile ? 'click' : 'hover'}>
-  <button>Touch me</button>
-</Tooltip>;
-```
-
 ## Framework Integration
 
 ### Does it work with Next.js?
 
-Yes! For App Router, mark as client component:
+Yes! Headless Tooltip fully supports Server-Side Rendering (SSR) and works with both Pages Router and App Router. No special configuration needed.
 
 ```jsx
-'use client';
 import Tooltip from 'headless-tooltip';
+
+// Works in both server and client components
+export default function Page() {
+  return (
+    <Tooltip content="Hello">
+      <button>Hover me</button>
+    </Tooltip>
+  );
+}
 ```
 
 ### Does it work with Gatsby?
 
-Yes! Works out of the box.
+Yes! Works out of the box with full SSR support.
 
 ### Does it work with Remix?
 
-Yes! Use ClientOnly for SSR:
+Yes! Headless Tooltip supports SSR out of the box. No ClientOnly wrapper needed.
 
 ```jsx
-<ClientOnly>{() => <Tooltip>...</Tooltip>}</ClientOnly>
+import Tooltip from 'headless-tooltip';
+
+export default function Route() {
+  return (
+    <Tooltip content="Hello">
+      <button>Hover me</button>
+    </Tooltip>
+  );
+}
 ```
 
 ## TypeScript
@@ -296,15 +500,6 @@ Headless Tooltip is:
 - ✅ More flexible styling
 - ✅ Better TypeScript support
 - ✅ More positioning options
-
-### vs Radix UI Tooltip?
-
-Headless Tooltip is:
-
-- ✅ Simpler API
-- ✅ Lighter weight
-- ✅ Easier customization
-- ✅ Better animation support
 
 ### vs Floating UI?
 
