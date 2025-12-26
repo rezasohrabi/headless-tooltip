@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from '@docusaurus/Link';
 import './InstallationSection.css';
 
 function InstallationSection() {
@@ -71,7 +72,7 @@ function InstallationSection() {
 
         <div className="links-section">
           <a
-            href="https://github.com/rezasohrabi/headlessui-tooltip"
+            href="https://github.com/rezasohrabi/headless-tooltip"
             target="_blank"
             rel="noopener noreferrer"
             className="link-button github-link"
@@ -104,7 +105,10 @@ function InstallationSection() {
             </svg>
             View on NPM
           </a>
-          <a href="/docs/intro" className="link-button docs-link">
+          <Link
+            to="/docs/getting-started/installation"
+            className="link-button docs-link"
+          >
             <svg
               width="24"
               height="24"
@@ -117,8 +121,8 @@ function InstallationSection() {
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
             </svg>
-            Documentation
-          </a>
+            Get Started
+          </Link>
         </div>
 
         <div className="quick-example">

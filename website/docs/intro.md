@@ -1,10 +1,21 @@
 ---
 sidebar_position: 1
+title: Introduction
+description: Lightweight, accessible React tooltip component with zero styling opinions. TypeScript support, WAI-ARIA compliant, works with React 17, 18, and 19.
+keywords:
+  [
+    react tooltip,
+    headless tooltip,
+    accessible tooltip,
+    react component,
+    typescript,
+    react hooks,
+  ]
 ---
 
 # Introduction
 
-Welcome to **Headless React Tooltip** - a next-generation headless UI component library for React that provides flexible, accessible, and highly customizable tooltip functionality.
+Welcome to **Headless React Tooltip** - a lightweight, accessible React tooltip component with zero styling opinions and full customization control. Perfect for modern web applications.
 
 ## What is Headless React Tooltip?
 

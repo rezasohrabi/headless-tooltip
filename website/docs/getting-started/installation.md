@@ -1,10 +1,19 @@
 ---
 sidebar_position: 1
+title: Installation
+description: Install headless-tooltip in your React project with npm, pnpm, or yarn. Quick setup guide for React 17, 18, and 19 with TypeScript support.
+keywords:
+  [
+    install react tooltip,
+    npm install tooltip,
+    react tooltip setup,
+    headless tooltip installation,
+  ]
 ---
 
 # Installation
 
-Get started with Headless React Tooltip in your React project.
+Get started with Headless React Tooltip in your React project. Quick and easy installation with npm, pnpm, or yarn.
 
 ## Prerequisites
 

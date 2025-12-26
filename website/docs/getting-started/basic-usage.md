@@ -1,10 +1,19 @@
 ---
 sidebar_position: 2
+title: Basic Usage
+description: Learn how to use Headless React Tooltip with practical examples. Custom styling, positioning, and trigger events for accessible tooltips.
+keywords:
+  [
+    react tooltip examples,
+    tooltip positioning,
+    custom tooltip styling,
+    react tooltip tutorial,
+  ]
 ---
 
 # Basic Usage
 
-Learn how to use Headless React Tooltip with simple examples.
+Learn how to use Headless React Tooltip with simple, practical examples. Create beautiful, accessible tooltips in minutes.
 
 ## Your First Tooltip
 

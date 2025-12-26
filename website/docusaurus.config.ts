@@ -8,7 +8,7 @@ const config: Config = {
   title: 'Headless React Tooltip - Lightweight & Accessible Tooltip Component',
   tagline:
     'A powerful, lightweight, and fully accessible headless React tooltip component with zero styling opinions and full customization control',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/social-card.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -62,15 +62,7 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-722BJTW24P',
-        anonymizeIP: false,
-      },
-    ],
-  ],
+  plugins: [],
 
   headTags: [
     {
@@ -89,8 +81,25 @@ const config: Config = {
     },
   ],
 
+  scripts:
+    process.env.NODE_ENV === 'production'
+      ? [
+          {
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-722BJTW24P',
+            async: true,
+          },
+        ]
+      : [],
+
+  clientModules: [require.resolve('./src/clientModules/gtag.ts')],
+
   themeConfig: {
     image: 'img/social-card.png',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     metadata: [
       {
         name: 'description',
@@ -105,17 +114,7 @@ const config: Config = {
     ],
     navbar: {
       title: 'Headless React Tooltip',
-      logo: {
-        alt: 'Headless React Tooltip Logo',
-        src: 'img/logo.svg',
-      },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
         {
           href: 'https://www.npmjs.com/package/headless-tooltip',
           label: 'NPM',
