@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@react-router/node':
-    specifier: ^7.7.1
-    version: 7.9.2(react-router@7.9.2)(typescript@5.9.2)
+    specifier: ^7.9.4
+    version: 7.9.4(react-router@7.9.2)(typescript@5.9.2)
   '@react-router/serve':
     specifier: ^7.7.1
     version: 7.9.2(react-router@7.9.2)(typescript@5.9.2)
@@ -802,6 +802,21 @@ packages:
       '@mjackson/node-fetch-server': 0.2.0
       react-router: 7.9.2(react-dom@19.1.1)(react@19.1.1)
       typescript: 5.9.2
+
+  /@react-router/node@7.9.4(react-router@7.9.2)(typescript@5.9.2):
+    resolution: {integrity: sha512-sdeDNRaqAB71BR2hPlhcQbPbrXh8uGJUjLVc+NpRiPsQbv6B8UvIucN4IX9YGVJkw3UxVQBn2vPSwxACAck32Q==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react-router: 7.9.4
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@mjackson/node-fetch-server': 0.2.0
+      react-router: 7.9.2(react-dom@19.1.1)(react@19.1.1)
+      typescript: 5.9.2
+    dev: false
 
   /@react-router/serve@7.9.2(react-router@7.9.2)(typescript@5.9.2):
     resolution: {integrity: sha512-EknsRlsSVavDH3/rTiThxQWFINfQJ04ctswXigX0e2wTMLyIBqS6XfdznrmUIwdb7r7xHocNcLJcGErdaOha8w==}
