@@ -28,7 +28,7 @@
     "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",
     "react-live": "^4.1.8",
-    "swiper": "^11.1.14"
+    "swiper": "^12.1.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.1",
